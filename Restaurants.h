@@ -13,8 +13,8 @@
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSNumber *stars;
 @property (strong, nonatomic) NSString *theDescription;
-
-
+@property (strong, nonatomic) NSNumber *longitude;
+@property (strong, nonatomic) NSNumber *latitude;
 
 
 @end

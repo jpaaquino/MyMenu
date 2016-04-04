@@ -36,47 +36,7 @@
     [self setupLocationManager];
     
     // [self geocodeAnAddress];
-    NSURL *url = [NSURL URLWithString:@"https://api.yelp.com/v2/search?term=german+food&location=Hayes&cll=43.644645043,-79.3949990"];
-    
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        // The completion handler is code that will run when the request is completed
-        if (!error) {
-            
-            NSError *jsonError;
-            NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-            NSArray *restaurantsArray = jsonObject[@"id"];//create an array with json objects that should be converted to obj-c objects
-            //NSLog(@"%@",restaurantsArray);
-            if (!jsonError) {
-                // NSMutableArray *titlesArray = [NSMutableArray array];
-                for (NSDictionary *movieDict in restaurantsArray) {//iterate thru moviesArray
-                    Restaurants *restaurant = [[Restaurants alloc] init];
-                    
-                    restaurant.name = movieDict[@"name"];
-                    //[self.theArray addObject:movie];
-                }
-                
-                
-                // tell table to reload in main thread
-                dispatch_async(dispatch_get_main_queue(), ^{
-                
-                    //[self.collectionView reloadData];
-                });
-                
-            }
-            
-        } else {
-            NSLog(@"There was an error: %@", error.localizedDescription);
-        }
-        
-    }];
-    
-    // Call resume on the task to start it
-    [dataTask resume];
-
+  
 }
 -(IBAction)dropPinAction:(id)sender{
     
@@ -158,6 +118,8 @@
        if ([[segue identifier] isEqualToString:@"toDetail"]) {
         DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
         controller.delegate = self;
+           controller.pinLatitude = self.currentPinLat;
+           controller.pinLongitude = self.currentPinLong;
     }
     
 }
@@ -168,6 +130,9 @@
    // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(43.644645043,-79.3949990);
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
     annotation.coordinate = coordinate;
+    self.currentPinLat = [NSNumber numberWithDouble:annotation.coordinate.latitude];
+    self.currentPinLong = [NSNumber numberWithDouble:annotation.coordinate.longitude];
+
     annotation.title = @"The current Location";
        [self.mapView addAnnotation:annotation];
 

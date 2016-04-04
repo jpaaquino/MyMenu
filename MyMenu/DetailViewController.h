@@ -25,6 +25,10 @@
 
 @property (weak, nonatomic) id<theDelegate> delegate;
 
+@property (strong, nonatomic) NSNumber *pinLongitude;
+@property (strong, nonatomic) NSNumber *pinLatitude;
+
+
 - (IBAction)HideKeyboard:(id)sender;
 
 

@@ -38,6 +38,8 @@
     Restaurants *newRestaurant = [[Restaurants alloc]init];
     newRestaurant.name = self.restaurantTextField.text;
     newRestaurant.theDescription = self.descriptionTextView.text;
+    newRestaurant.longitude = self.pinLongitude;
+    newRestaurant.latitude = self.pinLatitude;
     [self.delegate createNewEntry:newRestaurant];
     [self.navigationController popViewControllerAnimated:YES];
 

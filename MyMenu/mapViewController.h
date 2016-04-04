@@ -15,6 +15,9 @@
 
 @interface mapViewController : UIViewController
 
+@property (strong, nonatomic) NSNumber *currentPinLat;
+@property (strong, nonatomic) NSNumber *currentPinLong;
+
 
 -(IBAction)dropPinAction:(id)sender;
 
