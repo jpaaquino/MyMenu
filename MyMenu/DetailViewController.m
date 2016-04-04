@@ -7,8 +7,11 @@
 //
 
 #import "DetailViewController.h"
+#import "BTRatingView.h"
 
-@interface DetailViewController ()
+@interface DetailViewController ()<BTRatingViewDelegate>
+@property (nonatomic, strong) IBOutlet BTRatingView *ratingView;
+
 
 @end
 
@@ -16,6 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.ratingView.delegate = self;
+    self.ratingView.emptyStarImage = [UIImage imageNamed:@"rateOff.png"];
+    self.ratingView.fullStarImage = [UIImage imageNamed:@"rateOn.png"];
+    self.ratingView.editable = YES;
+    self.ratingView.maxRating = 5;
+    self.ratingView.rating = 2;
+    
     // Do any additional setup after loading the view.
 }
 
@@ -23,7 +34,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)ratingView:(BTRatingView *)ratingView ratingDidChange:(float)rating
+{
+    NSLog(@"RatingDidChange: %f",rating);
+}
 /*
 #pragma mark - Navigation
 

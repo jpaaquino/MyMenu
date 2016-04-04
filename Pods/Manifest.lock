@@ -1,0 +1,13 @@
+PODS:
+  - AXRatingView (1.0.3)
+  - BTRatingView (1.0.1)
+
+DEPENDENCIES:
+  - AXRatingView
+  - BTRatingView
+
+SPEC CHECKSUMS:
+  AXRatingView: ccaadc1bbda99a4b7e1d556059482d2b933a9f4e
+  BTRatingView: a762fbec412e05ba9158fd296cd529d6dbdef872
+
+COCOAPODS: 0.39.0

@@ -21,11 +21,16 @@
 		3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FD5CE1CB1F7E600491A58 /* DetailViewController.m */; };
 		3FD6DE381CB06E47001F7CFC /* lighthouseLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */; };
 		3FD6DE3E1CB0745B001F7CFC /* Restaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */; };
+		3FF06F991CB31A6D0088F8B1 /* rateOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF06F971CB31A6D0088F8B1 /* rateOff.png */; };
+		3FF06F9A1CB31A6D0088F8B1 /* rateOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF06F981CB31A6D0088F8B1 /* rateOn.png */; };
 		3FF6E5AE1CB2E8B200D13EBB /* bullseye.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */; };
 		3FF6E5B11CB30B3000D13EBB /* Visits.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6E5B01CB30B3000D13EBB /* Visits.m */; };
+		F0B01495B2A55BA354A24E18 /* libPods-MyMenu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12151A9AA18907DE74178F05 /* libPods-MyMenu.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12151A9AA18907DE74178F05 /* libPods-MyMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2ED6E1E7E8C932E139E70F37 /* Pods-MyMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMenu/Pods-MyMenu.release.xcconfig"; sourceTree = "<group>"; };
 		3F4A170D1CAF213700B023C7 /* MyMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4A17111CAF213700B023C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F4A17131CAF213700B023C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -47,9 +52,12 @@
 		3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lighthouseLocation.gpx; path = ../../../lighthouseLocation.gpx; sourceTree = "<group>"; };
 		3FD6DE3C1CB0745B001F7CFC /* Restaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Restaurants.h; path = ../Restaurants.h; sourceTree = "<group>"; };
 		3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Restaurants.m; path = ../Restaurants.m; sourceTree = "<group>"; };
+		3FF06F971CB31A6D0088F8B1 /* rateOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rateOff.png; path = ../../../rateOff.png; sourceTree = "<group>"; };
+		3FF06F981CB31A6D0088F8B1 /* rateOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rateOn.png; path = ../../../rateOn.png; sourceTree = "<group>"; };
 		3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullseye.png; path = ../../../bullseye.png; sourceTree = "<group>"; };
 		3FF6E5AF1CB30B3000D13EBB /* Visits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visits.h; sourceTree = "<group>"; };
 		3FF6E5B01CB30B3000D13EBB /* Visits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visits.m; sourceTree = "<group>"; };
+		84263A10B4012E78EE57167E /* Pods-MyMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMenu/Pods-MyMenu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 				3F4A17321CB045A300B023C7 /* AddressBookUI.framework in Frameworks */,
 				3F4A17301CB0450600B023C7 /* CoreLocation.framework in Frameworks */,
 				3F4A172E1CB044F900B023C7 /* MapKit.framework in Frameworks */,
+				F0B01495B2A55BA354A24E18 /* libPods-MyMenu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +83,8 @@
 				3F4A172D1CB044F900B023C7 /* MapKit.framework */,
 				3F4A170F1CAF213700B023C7 /* MyMenu */,
 				3F4A170E1CAF213700B023C7 /* Products */,
+				F3BEA7D0A79ECE8F79A93351 /* Pods */,
+				A944B3C83C144F7DEDAB1FB1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,11 +124,30 @@
 		3F4A17101CAF213700B023C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3FF06F971CB31A6D0088F8B1 /* rateOff.png */,
+				3FF06F981CB31A6D0088F8B1 /* rateOn.png */,
 				3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */,
 				3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */,
 				3F4A17111CAF213700B023C7 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A944B3C83C144F7DEDAB1FB1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12151A9AA18907DE74178F05 /* libPods-MyMenu.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3BEA7D0A79ECE8F79A93351 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84263A10B4012E78EE57167E /* Pods-MyMenu.debug.xcconfig */,
+				2ED6E1E7E8C932E139E70F37 /* Pods-MyMenu.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,9 +157,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3F4A17271CAF213700B023C7 /* Build configuration list for PBXNativeTarget "MyMenu" */;
 			buildPhases = (
+				EA5C65E02EB09299A2E36BFB /* Check Pods Manifest.lock */,
 				3F4A17091CAF213700B023C7 /* Sources */,
 				3F4A170A1CAF213700B023C7 /* Frameworks */,
 				3F4A170B1CAF213700B023C7 /* Resources */,
+				45385B803F6E8F4AD1D427C6 /* Embed Pods Frameworks */,
+				139EBBDF2E4C0D2ABCFAABFC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,12 +213,62 @@
 				3FD6DE381CB06E47001F7CFC /* lighthouseLocation.gpx in Resources */,
 				3F4A17231CAF213700B023C7 /* LaunchScreen.storyboard in Resources */,
 				3F4A17201CAF213700B023C7 /* Assets.xcassets in Resources */,
+				3FF06F991CB31A6D0088F8B1 /* rateOff.png in Resources */,
 				3FF6E5AE1CB2E8B200D13EBB /* bullseye.png in Resources */,
 				3F4A171B1CAF213700B023C7 /* Main.storyboard in Resources */,
+				3FF06F9A1CB31A6D0088F8B1 /* rateOn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		139EBBDF2E4C0D2ABCFAABFC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyMenu/Pods-MyMenu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45385B803F6E8F4AD1D427C6 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyMenu/Pods-MyMenu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA5C65E02EB09299A2E36BFB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3F4A17091CAF213700B023C7 /* Sources */ = {
@@ -309,6 +392,7 @@
 		};
 		3F4A17281CAF213700B023C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84263A10B4012E78EE57167E /* Pods-MyMenu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyMenu/Info.plist;
@@ -320,6 +404,7 @@
 		};
 		3F4A17291CAF213700B023C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ED6E1E7E8C932E139E70F37 /* Pods-MyMenu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyMenu/Info.plist;
