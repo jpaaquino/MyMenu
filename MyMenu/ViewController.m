@@ -31,7 +31,7 @@
             NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
             //NSArray *restaurantArray = [@[@"soco", @"taverna"] mutableCopy];
             NSArray *restaurantArray = [jsonObject[@"location"]mutableCopy];//create an array with json objects that should be converted to obj-c objects
-            NSLog(@"%@",restaurantArray);
+           // NSLog(@"%@",restaurantArray);
             if (!jsonError) {
                 // NSMutableArray *titlesArray = [NSMutableArray array];
                 for (NSDictionary *restDict in restaurantArray) {//iterate thru moviesArray

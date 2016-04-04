@@ -13,10 +13,11 @@
 
 
 
-@interface mapViewController () <MKMapViewDelegate, CLLocationManagerDelegate>
+@interface mapViewController () <MKMapViewDelegate, CLLocationManagerDelegate,theDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) BOOL didZoom;
+@property NSMutableArray *restaurantArray;
 
 
 @end
@@ -25,8 +26,9 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     
-    
-    
+    if(self.restaurantArray.count == 0){
+    self.restaurantArray = @[].mutableCopy;
+    }
     self.mapView.delegate = self;
     
     self.mapView.showsUserLocation=YES;
@@ -47,7 +49,7 @@
             NSError *jsonError;
             NSDictionary *jsonObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
             NSArray *restaurantsArray = jsonObject[@"id"];//create an array with json objects that should be converted to obj-c objects
-            NSLog(@"%@",restaurantsArray);
+            //NSLog(@"%@",restaurantsArray);
             if (!jsonError) {
                 // NSMutableArray *titlesArray = [NSMutableArray array];
                 for (NSDictionary *movieDict in restaurantsArray) {//iterate thru moviesArray
@@ -60,6 +62,7 @@
                 
                 // tell table to reload in main thread
                 dispatch_async(dispatch_get_main_queue(), ^{
+                
                     //[self.collectionView reloadData];
                 });
                 
@@ -151,6 +154,14 @@
     // Don't zoom to their location after this.
     self.didZoom = YES;
 }
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+       if ([[segue identifier] isEqualToString:@"toDetail"]) {
+        DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
+        controller.delegate = self;
+    }
+    
+}
+
 
 - (void)addCurrentLocationAnnotation {
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
@@ -158,10 +169,30 @@
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
     annotation.coordinate = coordinate;
     annotation.title = @"The current Location";
-    [self.mapView addAnnotation:annotation];
+       [self.mapView addAnnotation:annotation];
 
    }
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
+    annotationView.canShowCallout = YES;
+    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    annotationView.rightCalloutAccessoryView = infoButton;
+    
+    return annotationView;
+}
+- (void)createNewEntry:(Restaurants *)restaurant{
+    [self.restaurantArray addObject:restaurant]; //add the restaurant object we are receiving to the array
+    NSLog(@"Restaurants array:%lu entries",(unsigned long)self.restaurantArray.count);//logs num
+}
 
 
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    [self performSegueWithIdentifier:@"toDetail" sender:self];
+
+}
 
 @end

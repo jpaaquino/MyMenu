@@ -11,5 +11,10 @@
 @interface Restaurants : NSObject
 
 @property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSNumber *stars;
+@property (strong, nonatomic) NSString *theDescription;
+
+
+
 
 @end

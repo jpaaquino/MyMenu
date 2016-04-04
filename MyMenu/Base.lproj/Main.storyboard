@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Pan-OR-z9Y">
-                                <rect key="frame" x="0.0" y="20" width="600" height="386"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="480"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2X-wa-jzh">
                                 <rect key="frame" x="258" y="550" width="85" height="30"/>
@@ -36,7 +36,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Pan-OR-z9Y" secondAttribute="trailing" id="5WM-Pb-unT"/>
                             <constraint firstItem="G2X-wa-jzh" firstAttribute="centerX" secondItem="yVi-bq-VYB" secondAttribute="centerX" id="A56-dl-9iH"/>
-                            <constraint firstItem="yxx-j4-jVk" firstAttribute="top" secondItem="Pan-OR-z9Y" secondAttribute="bottom" constant="194" id="EgT-4L-v45"/>
+                            <constraint firstItem="yxx-j4-jVk" firstAttribute="top" secondItem="Pan-OR-z9Y" secondAttribute="bottom" constant="100" id="EgT-4L-v45"/>
                             <constraint firstItem="yxx-j4-jVk" firstAttribute="top" secondItem="G2X-wa-jzh" secondAttribute="bottom" constant="20" id="Roa-Ho-DDW"/>
                             <constraint firstItem="Pan-OR-z9Y" firstAttribute="leading" secondItem="yVi-bq-VYB" secondAttribute="leading" id="iVs-Vo-qoG"/>
                             <constraint firstItem="Pan-OR-z9Y" firstAttribute="top" secondItem="V5j-8O-G5q" secondAttribute="bottom" constant="-44" id="qSf-uM-4w2"/>
@@ -44,11 +44,89 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="Pan-OR-z9Y" id="sg0-9Z-6XS"/>
+                        <segue destination="Eu3-1Q-Hfi" kind="show" identifier="toDetail" id="EFG-Se-UJv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4g-Pz-ssw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="202" y="-266"/>
+            <point key="canvasLocation" x="115" y="-608"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Iph-4Z-cZB">
+            <objects>
+                <viewController id="Eu3-1Q-Hfi" customClass="DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qXF-O2-Drl"/>
+                        <viewControllerLayoutGuide type="bottom" id="74Y-zt-WXN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8mM-ms-z19">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Restaurant name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ws-sb-WJt">
+                                <rect key="frame" x="25" y="72" width="197" height="60"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jq8-sI-qTb">
+                                <rect key="frame" x="20" y="396" width="241" height="98"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="34"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAction:" destination="Eu3-1Q-Hfi" eventType="touchUpInside" id="MGz-Om-DKe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ratings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqJ-sB-mOk">
+                                <rect key="frame" x="25" y="162" width="271" height="42"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pg8-2w-JeM">
+                                <rect key="frame" x="20" y="124" width="221" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="HideKeyboard:" destination="Eu3-1Q-Hfi" eventType="editingDidEndOnExit" id="B6H-JM-kah"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g1d-3s-fqf">
+                                <rect key="frame" x="20" y="284" width="256" height="91"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opI-w5-3FM">
+                                <rect key="frame" x="25" y="255" width="271" height="21"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pS2-ow-OA0">
+                                <rect key="frame" x="20" y="204" width="217" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="HideKeyboard:" destination="Eu3-1Q-Hfi" eventType="editingDidEndOnExit" id="ewa-UU-K4k"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="g1d-3s-fqf" id="Ru7-qK-i6V"/>
+                        <outlet property="ratingTextField" destination="pS2-ow-OA0" id="jft-ZH-KbF"/>
+                        <outlet property="restaurantTextField" destination="pg8-2w-JeM" id="eVb-Ru-Wlk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ur-Zj-SRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="-602"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

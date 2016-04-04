@@ -18,6 +18,7 @@
 		3F4A172E1CB044F900B023C7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4A172D1CB044F900B023C7 /* MapKit.framework */; };
 		3F4A17301CB0450600B023C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4A172F1CB0450600B023C7 /* CoreLocation.framework */; };
 		3F4A17321CB045A300B023C7 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4A17311CB045A300B023C7 /* AddressBookUI.framework */; };
+		3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FD5CE1CB1F7E600491A58 /* DetailViewController.m */; };
 		3FD6DE381CB06E47001F7CFC /* lighthouseLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */; };
 		3FD6DE3E1CB0745B001F7CFC /* Restaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,8 @@
 		3F4A172D1CB044F900B023C7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3F4A172F1CB0450600B023C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		3F4A17311CB045A300B023C7 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		3F9FD5CD1CB1F7E600491A58 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		3F9FD5CE1CB1F7E600491A58 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lighthouseLocation.gpx; path = ../../../lighthouseLocation.gpx; sourceTree = "<group>"; };
 		3FD6DE3C1CB0745B001F7CFC /* Restaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Restaurants.h; path = ../Restaurants.h; sourceTree = "<group>"; };
 		3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Restaurants.m; path = ../Restaurants.m; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 				3F4A17171CAF213700B023C7 /* ViewController.m */,
 				3F4A172A1CB044E500B023C7 /* mapViewController.h */,
 				3F4A172B1CB044E500B023C7 /* mapViewController.m */,
+				3F9FD5CD1CB1F7E600491A58 /* DetailViewController.h */,
+				3F9FD5CE1CB1F7E600491A58 /* DetailViewController.m */,
 				3F4A17191CAF213700B023C7 /* Main.storyboard */,
 				3F4A171F1CAF213700B023C7 /* Assets.xcassets */,
 				3F4A17211CAF213700B023C7 /* LaunchScreen.storyboard */,
@@ -184,6 +189,7 @@
 				3F4A172C1CB044E500B023C7 /* mapViewController.m in Sources */,
 				3F4A171E1CAF213700B023C7 /* MyMenu.xcdatamodeld in Sources */,
 				3F4A17121CAF213700B023C7 /* main.m in Sources */,
+				3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
