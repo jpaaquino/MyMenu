@@ -21,6 +21,7 @@
 		3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FD5CE1CB1F7E600491A58 /* DetailViewController.m */; };
 		3FD6DE381CB06E47001F7CFC /* lighthouseLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */; };
 		3FD6DE3E1CB0745B001F7CFC /* Restaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */; };
+		3FF6E5AE1CB2E8B200D13EBB /* bullseye.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lighthouseLocation.gpx; path = ../../../lighthouseLocation.gpx; sourceTree = "<group>"; };
 		3FD6DE3C1CB0745B001F7CFC /* Restaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Restaurants.h; path = ../Restaurants.h; sourceTree = "<group>"; };
 		3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Restaurants.m; path = ../Restaurants.m; sourceTree = "<group>"; };
+		3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullseye.png; path = ../../../bullseye.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		3F4A17101CAF213700B023C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */,
 				3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */,
 				3F4A17111CAF213700B023C7 /* main.m */,
 			);
@@ -172,6 +175,7 @@
 				3FD6DE381CB06E47001F7CFC /* lighthouseLocation.gpx in Resources */,
 				3F4A17231CAF213700B023C7 /* LaunchScreen.storyboard in Resources */,
 				3F4A17201CAF213700B023C7 /* Assets.xcassets in Resources */,
+				3FF6E5AE1CB2E8B200D13EBB /* bullseye.png in Resources */,
 				3F4A171B1CAF213700B023C7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

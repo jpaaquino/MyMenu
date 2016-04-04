@@ -40,6 +40,7 @@
 }
 -(IBAction)dropPinAction:(id)sender{
     
+
     [self addCurrentLocationAnnotation];
 
     }
@@ -86,6 +87,19 @@
     if (self.didZoom) {
         return;
     }
+   // CLLocationCoordinate2D bullseyeCoordinate = self.mapView.centerCoordinate;
+   // UIImageView *bullseyeImageView = [[UIImageView alloc]init];
+    UIImageView *bullseyeImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bullseye.png"]];
+    CGSize size = self.mapView.frame.size;
+   // [bullseyeImageView setCenter:CGPointMake(size.width/2, size.height/2)];
+    [bullseyeImageView setFrame:CGRectMake(size.width/2-7.5, size.height/2+8, 15, 15)];
+    [self.mapView addSubview:bullseyeImageView];
+
+
+
+
+
+
     //NSError *error = nil;
     
     // Get the latest location, create a map region and zoom the map view to show it.
@@ -102,6 +116,8 @@
     }];
     
     CLLocationCoordinate2D coordinate = location.coordinate;
+    //CLLocationCoordinate2D coordinate = self.mapView.centerCoordinate;
+
     MKCoordinateSpan span = MKCoordinateSpanMake(0.01, 0.01);
     MKCoordinateRegion region = MKCoordinateRegionMake(coordinate, span);
    
@@ -128,7 +144,11 @@
 - (void)addCurrentLocationAnnotation {
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
    // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(43.644645043,-79.3949990);
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+
+   // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
+    CLLocationCoordinate2D coordinate = self.mapView.centerCoordinate;
+
+
     annotation.coordinate = coordinate;
     self.currentPinLat = [NSNumber numberWithDouble:annotation.coordinate.latitude];
     self.currentPinLong = [NSNumber numberWithDouble:annotation.coordinate.longitude];
