@@ -52,8 +52,13 @@
 - (IBAction)saveAction:(id)sender {
     Restaurants *newRestaurant = [[Restaurants alloc]init];
     Visits *visit = [[Visits alloc]init];
+    visit.theDescription = self.descriptionTextView.text;
+    visit.stars = @(self.ratingView.rating);
+    visit.date = self.theDatePicker.date;
+    NSLog(@"D:%@ S:%@, D:%@",visit.theDescription,visit.stars,visit.date);
+
     newRestaurant.name = self.restaurantTextField.text;
-    newRestaurant.theDescription = self.descriptionTextView.text;
+    //newRestaurant.theDescription = self.descriptionTextView.text;
     newRestaurant.longitude = self.pinLongitude;
     newRestaurant.latitude = self.pinLatitude;
     [self.delegate createNewEntry:newRestaurant];

@@ -60,6 +60,37 @@
             </objects>
             <point key="canvasLocation" x="-541.5" y="-480.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="FXA-hd-al2">
+            <objects>
+                <viewController id="Avk-1g-JE6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SNP-cn-MSZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ryY-M2-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hRM-lM-gDS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Maf-PM-SxA">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Maf-PM-SxA" secondAttribute="trailing" id="Uee-6B-lbA"/>
+                            <constraint firstItem="Maf-PM-SxA" firstAttribute="top" secondItem="SNP-cn-MSZ" secondAttribute="bottom" id="m6o-NS-0EG"/>
+                            <constraint firstItem="ryY-M2-rB5" firstAttribute="top" secondItem="Maf-PM-SxA" secondAttribute="bottom" id="nt0-pQ-NfX"/>
+                            <constraint firstItem="Maf-PM-SxA" firstAttribute="leading" secondItem="hRM-lM-gDS" secondAttribute="leading" id="sXD-cr-0eA"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JcR-vl-8Dq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="85" y="-1196"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="Iph-4Z-cZB">
             <objects>
@@ -112,6 +143,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkA-Cz-Ocp">
+                                <rect key="frame" x="222" y="72" width="90" height="30"/>
+                                <state key="normal" title="To table view"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -120,6 +155,7 @@
                         <outlet property="descriptionTextView" destination="g1d-3s-fqf" id="Ru7-qK-i6V"/>
                         <outlet property="ratingView" destination="msT-tp-KwC" id="56K-aG-FJl"/>
                         <outlet property="restaurantTextField" destination="pg8-2w-JeM" id="eVb-Ru-Wlk"/>
+                        <outlet property="theDatePicker" destination="KTr-n7-MjZ" id="lOg-9F-aOo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ur-Zj-SRs" userLabel="First Responder" sceneMemberID="firstResponder"/>

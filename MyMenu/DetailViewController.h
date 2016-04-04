@@ -23,7 +23,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *restaurantTextField;
 
-@property (weak, nonatomic) IBOutlet UITextField *ratingTextField;
+@property int numberOfRatings;
 
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 
@@ -31,6 +31,7 @@
 
 @property (strong, nonatomic) NSNumber *pinLongitude;
 @property (strong, nonatomic) NSNumber *pinLatitude;
+@property (weak, nonatomic) IBOutlet UIDatePicker *theDatePicker;
 
 
 - (IBAction)HideKeyboard:(id)sender;
