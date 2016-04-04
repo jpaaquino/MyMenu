@@ -28,15 +28,39 @@
     
     if(self.restaurantArray.count == 0){
     self.restaurantArray = @[].mutableCopy;
+       // self.restaurantArray = [[NSMutableArray alloc]init];
+
     }
     self.mapView.delegate = self;
     
     self.mapView.showsUserLocation=YES;
     
     [self setupLocationManager];
+   // [self addRestaurantsToView];
+
+
     
     // [self geocodeAnAddress];
   
+}
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+   
+    for (id <MKAnnotation>  myAnnot in [self.mapView annotations])
+    {
+        if (![myAnnot isKindOfClass:[MKUserLocation class]])
+        {
+            [self.mapView removeAnnotation:myAnnot];
+        }
+    }
+
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    //NSLog(@"VDA RA:%lu entries",(unsigned long)self.restaurantArray.count);//logs num
+    [self addRestaurantsToView];
+
 }
 -(IBAction)dropPinAction:(id)sender{
     
@@ -45,6 +69,21 @@
 
     }
 
+-(void)addRestaurantsToView{
+    // Loop over our stations array to create, configure and add the annotation to the map view
+    
+    for (Restaurants *restaurant in self.restaurantArray) {
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+        
+        // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([theatre[@"lat"] doubleValue], [theatre[@"long"] doubleValue]);
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([restaurant.latitude doubleValue], [restaurant.longitude doubleValue]);
+        
+        annotation.coordinate = coordinate;
+        annotation.title = restaurant.name;
+        
+        [self.mapView addAnnotation:annotation];
+    }
+}
 
 - (void)setupLocationManager {
     // Create it and set it's delegate to our self.
@@ -153,10 +192,13 @@
     self.currentPinLat = [NSNumber numberWithDouble:annotation.coordinate.latitude];
     self.currentPinLong = [NSNumber numberWithDouble:annotation.coordinate.longitude];
 
-    annotation.title = @"The current Location";
+    if(annotation.title == nil){
+      annotation.title = @"Click to add restaurant";
+    }
        [self.mapView addAnnotation:annotation];
 
    }
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
     if ([annotation isKindOfClass:[MKUserLocation class]])
@@ -171,7 +213,7 @@
 }
 - (void)createNewEntry:(Restaurants *)restaurant{
     [self.restaurantArray addObject:restaurant]; //add the restaurant object we are receiving to the array
-    NSLog(@"Restaurants array:%lu entries",(unsigned long)self.restaurantArray.count);//logs num
+    //NSLog(@"Restaurants array:%lu entries",(unsigned long)self.restaurantArray.count);//logs num
 }
 
 
