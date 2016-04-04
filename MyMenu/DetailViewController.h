@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Restaurants.h"
+#import "AXRatingView.h"
+#import "Visits.h"
+
+
 @protocol theDelegate <NSObject>
 - (void)createNewEntry:(Restaurants *)restaurant;
 @end

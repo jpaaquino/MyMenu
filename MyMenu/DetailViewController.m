@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "BTRatingView.h"
 
+
 @interface DetailViewController ()<BTRatingViewDelegate>
 @property (nonatomic, strong) IBOutlet BTRatingView *ratingView;
 
@@ -19,13 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   
     self.ratingView.delegate = self;
-    self.ratingView.emptyStarImage = [UIImage imageNamed:@"rateOff.png"];
-    self.ratingView.fullStarImage = [UIImage imageNamed:@"rateOn.png"];
+    self.ratingView.emptyStarImage = [UIImage imageNamed:@"staroff.png"];
+    self.ratingView.fullStarImage = [UIImage imageNamed:@"shinystar.png"];
     self.ratingView.editable = YES;
     self.ratingView.maxRating = 5;
-    self.ratingView.rating = 2;
+    self.ratingView.rating = 5;
     
     // Do any additional setup after loading the view.
 }
@@ -33,10 +34,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-- (void)ratingView:(BTRatingView *)ratingView ratingDidChange:(float)rating
-{
-    NSLog(@"RatingDidChange: %f",rating);
 }
 /*
 #pragma mark - Navigation
@@ -47,9 +44,14 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)ratingView:(BTRatingView *)ratingView ratingDidChange:(float)rating
+{
+    NSLog(@"RatingDidChange: %f",rating);
+}
 
 - (IBAction)saveAction:(id)sender {
     Restaurants *newRestaurant = [[Restaurants alloc]init];
+    Visits *visit = [[Visits alloc]init];
     newRestaurant.name = self.restaurantTextField.text;
     newRestaurant.theDescription = self.descriptionTextView.text;
     newRestaurant.longitude = self.pinLongitude;

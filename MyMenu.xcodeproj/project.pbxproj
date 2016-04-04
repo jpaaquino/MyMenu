@@ -25,6 +25,9 @@
 		3FF06F9A1CB31A6D0088F8B1 /* rateOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF06F981CB31A6D0088F8B1 /* rateOn.png */; };
 		3FF6E5AE1CB2E8B200D13EBB /* bullseye.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */; };
 		3FF6E5B11CB30B3000D13EBB /* Visits.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6E5B01CB30B3000D13EBB /* Visits.m */; };
+		3FF75FD51CB31EA900414CE5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF75FD41CB31EA900414CE5 /* QuartzCore.framework */; };
+		3FF75FD71CB3219900414CE5 /* shinystar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF75FD61CB3219900414CE5 /* shinystar.png */; };
+		3FF75FD91CB3247A00414CE5 /* staroff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF75FD81CB3247A00414CE5 /* staroff.png */; };
 		F0B01495B2A55BA354A24E18 /* libPods-MyMenu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12151A9AA18907DE74178F05 /* libPods-MyMenu.a */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +60,9 @@
 		3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullseye.png; path = ../../../bullseye.png; sourceTree = "<group>"; };
 		3FF6E5AF1CB30B3000D13EBB /* Visits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visits.h; sourceTree = "<group>"; };
 		3FF6E5B01CB30B3000D13EBB /* Visits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visits.m; sourceTree = "<group>"; };
+		3FF75FD41CB31EA900414CE5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3FF75FD61CB3219900414CE5 /* shinystar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shinystar.png; path = ../../../shinystar.png; sourceTree = "<group>"; };
+		3FF75FD81CB3247A00414CE5 /* staroff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = staroff.png; path = ../../../starsImages/staroff.png; sourceTree = "<group>"; };
 		84263A10B4012E78EE57167E /* Pods-MyMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMenu/Pods-MyMenu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FF75FD51CB31EA900414CE5 /* QuartzCore.framework in Frameworks */,
 				3F4A17321CB045A300B023C7 /* AddressBookUI.framework in Frameworks */,
 				3F4A17301CB0450600B023C7 /* CoreLocation.framework in Frameworks */,
 				3F4A172E1CB044F900B023C7 /* MapKit.framework in Frameworks */,
@@ -126,6 +133,8 @@
 			children = (
 				3FF06F971CB31A6D0088F8B1 /* rateOff.png */,
 				3FF06F981CB31A6D0088F8B1 /* rateOn.png */,
+				3FF75FD61CB3219900414CE5 /* shinystar.png */,
+				3FF75FD81CB3247A00414CE5 /* staroff.png */,
 				3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */,
 				3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */,
 				3F4A17111CAF213700B023C7 /* main.m */,
@@ -136,6 +145,7 @@
 		A944B3C83C144F7DEDAB1FB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3FF75FD41CB31EA900414CE5 /* QuartzCore.framework */,
 				12151A9AA18907DE74178F05 /* libPods-MyMenu.a */,
 			);
 			name = Frameworks;
@@ -215,6 +225,8 @@
 				3F4A17201CAF213700B023C7 /* Assets.xcassets in Resources */,
 				3FF06F991CB31A6D0088F8B1 /* rateOff.png in Resources */,
 				3FF6E5AE1CB2E8B200D13EBB /* bullseye.png in Resources */,
+				3FF75FD91CB3247A00414CE5 /* staroff.png in Resources */,
+				3FF75FD71CB3219900414CE5 /* shinystar.png in Resources */,
 				3F4A171B1CAF213700B023C7 /* Main.storyboard in Resources */,
 				3FF06F9A1CB31A6D0088F8B1 /* rateOn.png in Resources */,
 			);
