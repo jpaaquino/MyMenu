@@ -1,23 +1,19 @@
 //
-//  Restaurants.h
+//  Visits.h
 //  MyMenu
 //
-//  Created by Joao Paulo Aquino on 2016-04-02.
+//  Created by Joao Paulo Aquino on 2016-04-04.
 //  Copyright © 2016 Joao Paulo Aquino. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Visits.h"
 
-
-@interface Restaurants : NSObject
+@interface Visits : NSObject
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSNumber *stars;
 @property (strong, nonatomic) NSString *theDescription;
-@property (strong, nonatomic) NSNumber *longitude;
-@property (strong, nonatomic) NSNumber *latitude;
+@property (strong, nonatomic) NSDate *date;
 
-@property NSMutableArray<Visits *> *visitsArray;
 
 @end

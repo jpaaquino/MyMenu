@@ -179,7 +179,6 @@
     
 }
 
-
 - (void)addCurrentLocationAnnotation {
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
    // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(43.644645043,-79.3949990);
@@ -205,9 +204,12 @@
         return nil;
     
     MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
+    //annotationView.draggable = YES;
     annotationView.canShowCallout = YES;
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     annotationView.rightCalloutAccessoryView = infoButton;
+    
+    annotationView.tintColor = [UIColor orangeColor];
     
     return annotationView;
 }

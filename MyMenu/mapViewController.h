@@ -14,6 +14,7 @@
 
 
 @interface mapViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISearchBar *theSearchBar;
 
 @property (strong, nonatomic) NSNumber *currentPinLat;
 @property (strong, nonatomic) NSNumber *currentPinLong;

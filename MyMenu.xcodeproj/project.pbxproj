@@ -22,6 +22,7 @@
 		3FD6DE381CB06E47001F7CFC /* lighthouseLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */; };
 		3FD6DE3E1CB0745B001F7CFC /* Restaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */; };
 		3FF6E5AE1CB2E8B200D13EBB /* bullseye.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */; };
+		3FF6E5B11CB30B3000D13EBB /* Visits.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6E5B01CB30B3000D13EBB /* Visits.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,8 @@
 		3FD6DE3C1CB0745B001F7CFC /* Restaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Restaurants.h; path = ../Restaurants.h; sourceTree = "<group>"; };
 		3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Restaurants.m; path = ../Restaurants.m; sourceTree = "<group>"; };
 		3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullseye.png; path = ../../../bullseye.png; sourceTree = "<group>"; };
+		3FF6E5AF1CB30B3000D13EBB /* Visits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visits.h; sourceTree = "<group>"; };
+		3FF6E5B01CB30B3000D13EBB /* Visits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visits.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 		3F4A170F1CAF213700B023C7 /* MyMenu */ = {
 			isa = PBXGroup;
 			children = (
+				3FF6E5AF1CB30B3000D13EBB /* Visits.h */,
+				3FF6E5B01CB30B3000D13EBB /* Visits.m */,
 				3FD6DE3C1CB0745B001F7CFC /* Restaurants.h */,
 				3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */,
 				3F4A17131CAF213700B023C7 /* AppDelegate.h */,
@@ -192,6 +197,7 @@
 				3FD6DE3E1CB0745B001F7CFC /* Restaurants.m in Sources */,
 				3F4A172C1CB044E500B023C7 /* mapViewController.m in Sources */,
 				3F4A171E1CAF213700B023C7 /* MyMenu.xcdatamodeld in Sources */,
+				3FF6E5B11CB30B3000D13EBB /* Visits.m in Sources */,
 				3F4A17121CAF213700B023C7 /* main.m in Sources */,
 				3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */,
 			);
