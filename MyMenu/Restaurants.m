@@ -1,15 +1,15 @@
 //
-//  Visits.m
+//  Restaurants.m
 //  
 //
 //  Created by Joao Paulo Aquino on 2016-04-05.
 //
 //
 
-#import "Visits.h"
 #import "Restaurants.h"
+#import "Visits.h"
 
-@implementation Visits
+@implementation Restaurants
 
 // Insert code here to add functionality to your managed object subclass
 

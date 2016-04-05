@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong,nonatomic) NSArray<Visits*>* allVisits;
 
 
 @end
@@ -21,11 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    if(self.objects == nil){
-    self.objects = @[].mutableCopy;
+    
+    [self fetchRestaurants];
+    
+        // Do any additional setup after loading the view.
+    if(self.allVisits == nil){
+    self.allVisits = @[];
     }
-    NSLog(@"%lu",(unsigned long)self.objects.count);
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 
@@ -40,6 +43,21 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)fetchRestaurants  {
+    AppDelegate* del = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Visits"];//gets all data from Entity
+    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];//sort ToDOItem properties by title ascending
+    self.allVisits = [del.managedObjectContext executeFetchRequest:req error:nil];
+    NSLog(@"All visits count: %lu",(unsigned long)self.allVisits.count);
+
+}
+-(NSDate *)dateWithOutTime:(NSDate *)datDate {
+    if(datDate == nil ) {
+        datDate = [NSDate date];
+    }
+    NSDateComponents* comps = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:datDate];
+    return [[NSCalendar currentCalendar] dateFromComponents:comps];
 }
 
 /*
@@ -67,23 +85,35 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.objects.count;//The number of objects in array = number of rows in table
+    return self.allVisits.count;//The number of objects in array = number of rows in table
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // Get our object associated with the row
-    Visits *visit = self.objects[indexPath.row];
+    Visits *visit = self.allVisits[indexPath.row];
     // Get a cell using our identifier
     visitCell *visitcell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     // Customize the cell
+    
     if(indexPath.row % 2 == 0){
-        visitcell.backgroundColor = [UIColor whiteColor];
-    }else{
         visitcell.backgroundColor = [UIColor orangeColor];
+    }else{
+        visitcell.backgroundColor = [UIColor whiteColor];
     }
-     visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",visit.date];
+    visitcell.dateLabel = [visitcell viewWithTag:1];
+    visitcell.descriptionLabel = [visitcell viewWithTag:2];
+    visitcell.starsLabel = [visitcell viewWithTag:3];
+    visit.stars = @(4);
+
+
+    NSDate *cleanDate = [self dateWithOutTime:visit.date];
+     visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",cleanDate];
+
      visitcell.descriptionLabel.text = visit.theDescription;
+    visitcell.starsLabel.text = [NSString stringWithFormat:@"%@ ⭐️",visit.stars ];
+
+    
     
     
       return visitcell;
@@ -115,14 +145,14 @@
 //    return proposedDestinationIndexPath;
 //}
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        [self.allVisits removeObjectAtIndex:indexPath.row];
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+//    }
+//}
 
 @end
 

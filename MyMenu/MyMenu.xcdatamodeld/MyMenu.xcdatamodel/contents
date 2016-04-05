@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15D21" minimumToolsVersion="Automatic">
-    <entity name="TheRestaurants" syncable="YES">
-        <attribute name="avgStars" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    <entity name="Restaurants" representedClassName="Restaurants" syncable="YES">
+        <attribute name="avgStars" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="toVisits" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TheVisits" inverseName="toRestaurant" inverseEntity="TheVisits" syncable="YES"/>
+        <relationship name="toVisits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Visits" inverseName="toRestaurant" inverseEntity="Visits" syncable="YES"/>
     </entity>
-    <entity name="TheVisits" syncable="YES">
+    <entity name="Visits" representedClassName="Visits" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="stars" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="theDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="toRestaurant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TheRestaurants" inverseName="toVisits" inverseEntity="TheRestaurants" syncable="YES"/>
+        <relationship name="toRestaurant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Restaurants" inverseName="toVisits" inverseEntity="Restaurants" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TheRestaurants" positionX="-18" positionY="27" width="128" height="120"/>
-        <element name="TheVisits" positionX="36" positionY="81" width="128" height="105"/>
+        <element name="Restaurants" positionX="-18" positionY="27" width="128" height="120"/>
+        <element name="Visits" positionX="36" positionY="81" width="128" height="105"/>
     </elements>
 </model>

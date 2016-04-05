@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F44A6F91CB429BB00E525F1 /* Restaurants+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F44A6F21CB429BB00E525F1 /* Restaurants+CoreDataProperties.m */; };
+		3F44A6FA1CB429BB00E525F1 /* Restaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F44A6F41CB429BB00E525F1 /* Restaurants.m */; };
+		3F44A6FB1CB429BB00E525F1 /* Visits+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F44A6F61CB429BB00E525F1 /* Visits+CoreDataProperties.m */; };
+		3F44A6FC1CB429BB00E525F1 /* Visits.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F44A6F81CB429BB00E525F1 /* Visits.m */; };
 		3F4A17121CAF213700B023C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A17111CAF213700B023C7 /* main.m */; };
 		3F4A17151CAF213700B023C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A17141CAF213700B023C7 /* AppDelegate.m */; };
 		3F4A17181CAF213700B023C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A17171CAF213700B023C7 /* ViewController.m */; };
@@ -20,11 +24,9 @@
 		3F4A17321CB045A300B023C7 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4A17311CB045A300B023C7 /* AddressBookUI.framework */; };
 		3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FD5CE1CB1F7E600491A58 /* DetailViewController.m */; };
 		3FD6DE381CB06E47001F7CFC /* lighthouseLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */; };
-		3FD6DE3E1CB0745B001F7CFC /* Restaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */; };
 		3FF06F991CB31A6D0088F8B1 /* rateOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF06F971CB31A6D0088F8B1 /* rateOff.png */; };
 		3FF06F9A1CB31A6D0088F8B1 /* rateOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF06F981CB31A6D0088F8B1 /* rateOn.png */; };
 		3FF6E5AE1CB2E8B200D13EBB /* bullseye.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */; };
-		3FF6E5B11CB30B3000D13EBB /* Visits.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF6E5B01CB30B3000D13EBB /* Visits.m */; };
 		3FF75FD51CB31EA900414CE5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF75FD41CB31EA900414CE5 /* QuartzCore.framework */; };
 		3FF75FD71CB3219900414CE5 /* shinystar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF75FD61CB3219900414CE5 /* shinystar.png */; };
 		3FF75FD91CB3247A00414CE5 /* staroff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF75FD81CB3247A00414CE5 /* staroff.png */; };
@@ -36,6 +38,14 @@
 /* Begin PBXFileReference section */
 		12151A9AA18907DE74178F05 /* libPods-MyMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED6E1E7E8C932E139E70F37 /* Pods-MyMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMenu/Pods-MyMenu.release.xcconfig"; sourceTree = "<group>"; };
+		3F44A6F11CB429BB00E525F1 /* Restaurants+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Restaurants+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3F44A6F21CB429BB00E525F1 /* Restaurants+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Restaurants+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3F44A6F31CB429BB00E525F1 /* Restaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurants.h; sourceTree = "<group>"; };
+		3F44A6F41CB429BB00E525F1 /* Restaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurants.m; sourceTree = "<group>"; };
+		3F44A6F51CB429BB00E525F1 /* Visits+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Visits+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3F44A6F61CB429BB00E525F1 /* Visits+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Visits+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3F44A6F71CB429BB00E525F1 /* Visits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visits.h; sourceTree = "<group>"; };
+		3F44A6F81CB429BB00E525F1 /* Visits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visits.m; sourceTree = "<group>"; };
 		3F4A170D1CAF213700B023C7 /* MyMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F4A17111CAF213700B023C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F4A17131CAF213700B023C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -55,13 +65,9 @@
 		3F9FD5CD1CB1F7E600491A58 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		3F9FD5CE1CB1F7E600491A58 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lighthouseLocation.gpx; path = ../../../lighthouseLocation.gpx; sourceTree = "<group>"; };
-		3FD6DE3C1CB0745B001F7CFC /* Restaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Restaurants.h; path = ../Restaurants.h; sourceTree = "<group>"; };
-		3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Restaurants.m; path = ../Restaurants.m; sourceTree = "<group>"; };
 		3FF06F971CB31A6D0088F8B1 /* rateOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rateOff.png; path = ../../../rateOff.png; sourceTree = "<group>"; };
 		3FF06F981CB31A6D0088F8B1 /* rateOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rateOn.png; path = ../../../rateOn.png; sourceTree = "<group>"; };
 		3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullseye.png; path = ../../../bullseye.png; sourceTree = "<group>"; };
-		3FF6E5AF1CB30B3000D13EBB /* Visits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visits.h; sourceTree = "<group>"; };
-		3FF6E5B01CB30B3000D13EBB /* Visits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visits.m; sourceTree = "<group>"; };
 		3FF75FD41CB31EA900414CE5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3FF75FD61CB3219900414CE5 /* shinystar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = shinystar.png; path = ../../../shinystar.png; sourceTree = "<group>"; };
 		3FF75FD81CB3247A00414CE5 /* staroff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = staroff.png; path = ../../../starsImages/staroff.png; sourceTree = "<group>"; };
@@ -112,14 +118,18 @@
 		3F4A170F1CAF213700B023C7 /* MyMenu */ = {
 			isa = PBXGroup;
 			children = (
+				3F44A6F11CB429BB00E525F1 /* Restaurants+CoreDataProperties.h */,
+				3F44A6F21CB429BB00E525F1 /* Restaurants+CoreDataProperties.m */,
+				3F44A6F31CB429BB00E525F1 /* Restaurants.h */,
+				3F44A6F41CB429BB00E525F1 /* Restaurants.m */,
+				3F44A6F51CB429BB00E525F1 /* Visits+CoreDataProperties.h */,
+				3F44A6F61CB429BB00E525F1 /* Visits+CoreDataProperties.m */,
+				3F44A6F71CB429BB00E525F1 /* Visits.h */,
+				3F44A6F81CB429BB00E525F1 /* Visits.m */,
 				3FF75FDD1CB331E200414CE5 /* PreviousVisitsViewController.h */,
 				3FF75FDE1CB331E200414CE5 /* PreviousVisitsViewController.m */,
 				3FF75FDA1CB32EE400414CE5 /* visitCell.h */,
 				3FF75FDB1CB32EE400414CE5 /* visitCell.m */,
-				3FF6E5AF1CB30B3000D13EBB /* Visits.h */,
-				3FF6E5B01CB30B3000D13EBB /* Visits.m */,
-				3FD6DE3C1CB0745B001F7CFC /* Restaurants.h */,
-				3FD6DE3D1CB0745B001F7CFC /* Restaurants.m */,
 				3F4A17131CAF213700B023C7 /* AppDelegate.h */,
 				3F4A17141CAF213700B023C7 /* AppDelegate.m */,
 				3F4A17161CAF213700B023C7 /* ViewController.h */,
@@ -299,13 +309,15 @@
 			files = (
 				3F4A17181CAF213700B023C7 /* ViewController.m in Sources */,
 				3F4A17151CAF213700B023C7 /* AppDelegate.m in Sources */,
-				3FD6DE3E1CB0745B001F7CFC /* Restaurants.m in Sources */,
 				3F4A172C1CB044E500B023C7 /* mapViewController.m in Sources */,
+				3F44A6F91CB429BB00E525F1 /* Restaurants+CoreDataProperties.m in Sources */,
+				3F44A6FB1CB429BB00E525F1 /* Visits+CoreDataProperties.m in Sources */,
 				3F4A171E1CAF213700B023C7 /* MyMenu.xcdatamodeld in Sources */,
 				3FF75FDC1CB32EE400414CE5 /* visitCell.m in Sources */,
-				3FF6E5B11CB30B3000D13EBB /* Visits.m in Sources */,
 				3F4A17121CAF213700B023C7 /* main.m in Sources */,
 				3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */,
+				3F44A6FC1CB429BB00E525F1 /* Visits.m in Sources */,
+				3F44A6FA1CB429BB00E525F1 /* Restaurants.m in Sources */,
 				3FF75FDF1CB331E200414CE5 /* PreviousVisitsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

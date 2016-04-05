@@ -1,5 +1,5 @@
 //
-//  Visits.h
+//  Restaurants.h
 //  
 //
 //  Created by Joao Paulo Aquino on 2016-04-05.
@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Restaurants;
+@class Visits;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Visits : NSManagedObject
+@interface Restaurants : NSManagedObject
 
 // Insert code here to declare functionality of your managed object subclass
 
@@ -21,4 +21,4 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
-#import "Visits+CoreDataProperties.h"
+#import "Restaurants+CoreDataProperties.h"

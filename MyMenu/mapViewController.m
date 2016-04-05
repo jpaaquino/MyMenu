@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) BOOL didZoom;
-@property NSMutableArray *restaurantArray;
+@property NSArray *restaurantArray;
 
 
 @end
@@ -71,7 +71,10 @@
 
 -(void)addRestaurantsToView{
     // Loop over our stations array to create, configure and add the annotation to the map view
-    
+    AppDelegate* del = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Restaurants"];//gets all data from Entity
+    self.restaurantArray = [del.managedObjectContext executeFetchRequest:req error:nil];
+
     for (Restaurants *restaurant in self.restaurantArray) {
         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
         
@@ -214,7 +217,7 @@
     return annotationView;
 }
 - (void)createNewEntry:(Restaurants *)restaurant{
-    [self.restaurantArray addObject:restaurant]; //add the restaurant object we are receiving to the array
+    //[self.restaurantArray addObject:restaurant]; //add the restaurant object we are receiving to the array
     //NSLog(@"Restaurants array:%lu entries",(unsigned long)self.restaurantArray.count);//logs num
 }
 

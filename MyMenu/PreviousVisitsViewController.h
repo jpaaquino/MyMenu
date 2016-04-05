@@ -13,11 +13,10 @@
 #import "ViewController.h"
 #import "mapViewController.h"
 #import "mapViewController.h"
-
+#import "AppDelegate.h"
 
 
 @interface PreviousVisitsViewController : UIViewController
 
-@property NSMutableArray *objects;
 
 @end

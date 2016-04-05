@@ -12,8 +12,9 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+@property (strong, nonatomic) IBOutlet UILabel *starsLabel;
 
-@property (weak, nonatomic) IBOutlet UIView *starsView;
+
 
 
 @end
