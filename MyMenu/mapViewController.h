@@ -18,6 +18,7 @@
 
 @property (strong, nonatomic) NSNumber *currentPinLat;
 @property (strong, nonatomic) NSNumber *currentPinLong;
+//@property (nonatomic, retain) Restaurants *currentRestaurant;
 
 
 -(IBAction)dropPinAction:(id)sender;

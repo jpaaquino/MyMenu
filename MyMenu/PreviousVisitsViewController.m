@@ -97,9 +97,9 @@
     // Customize the cell
     
     if(indexPath.row % 2 == 0){
-        visitcell.backgroundColor = [UIColor orangeColor];
+        visitcell.backgroundColor = [UIColor greenColor];
     }else{
-        visitcell.backgroundColor = [UIColor whiteColor];
+        visitcell.backgroundColor = [UIColor lightGrayColor];
     }
     visitcell.dateLabel = [visitcell viewWithTag:1];
     visitcell.descriptionLabel = [visitcell viewWithTag:2];
@@ -113,8 +113,6 @@
      visitcell.descriptionLabel.text = visit.theDescription;
     visitcell.starsLabel.text = [NSString stringWithFormat:@"%@ ⭐️",visit.stars ];
 
-    
-    
     
       return visitcell;
 }

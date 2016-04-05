@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
    
     self.ratingView.delegate = self;
     self.ratingView.emptyStarImage = [UIImage imageNamed:@"staroff.png"];

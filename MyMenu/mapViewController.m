@@ -75,17 +75,19 @@
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Restaurants"];//gets all data from Entity
     self.restaurantArray = [del.managedObjectContext executeFetchRequest:req error:nil];
 
-    for (Restaurants *restaurant in self.restaurantArray) {
-        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-        
-        // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([theatre[@"lat"] doubleValue], [theatre[@"long"] doubleValue]);
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([restaurant.latitude doubleValue], [restaurant.longitude doubleValue]);
-        
-        annotation.coordinate = coordinate;
-        annotation.title = restaurant.name;
-        
-        [self.mapView addAnnotation:annotation];
-    }
+//    for (Restaurants *restaurant in self.restaurantArray) {
+//        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+//        
+//        // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([theatre[@"lat"] doubleValue], [theatre[@"long"] doubleValue]);
+//        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([restaurant.latitude doubleValue], [restaurant.longitude doubleValue]);
+//        
+//        annotation.coordinate = coordinate;
+//        annotation.title = restaurant.name;
+//        
+//        [self.mapView addAnnotation:annotation];
+//    }
+    NSLog(@"%lu",(unsigned long)self.restaurantArray.count);
+    [self.mapView addAnnotations:self.restaurantArray];
 }
 
 - (void)setupLocationManager {
@@ -176,30 +178,67 @@
        if ([[segue identifier] isEqualToString:@"toDetail"]) {
         DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
         controller.delegate = self;
-           controller.pinLatitude = self.currentPinLat;
-           controller.pinLongitude = self.currentPinLong;
+        controller.pinLatitude = self.currentPinLat;
+        controller.pinLongitude = self.currentPinLong;
+       }
+    if ([[segue identifier] isEqualToString:@"toTableView"]) {
+        //PreviousVisitsViewController *controller = (PreviousVisitsViewController *)[segue destinationViewController];
+        //controller.delegate = self;
+
     }
-    
+
 }
 
+/*
 - (void)addCurrentLocationAnnotation {
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    //MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    NSManagedObjectContext* context = ((AppDelegate*)[[UIApplication sharedApplication] delegate]). managedObjectContext;
+
+   // Restaurants *newRestaurant = [[Restaurants alloc]init];
+    
+    Restaurants *newRestaurant = [NSEntityDescription insertNewObjectForEntityForName:@"Restaurants" inManagedObjectContext:context];
+
+
    // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(43.644645043,-79.3949990);
 
    // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
     CLLocationCoordinate2D coordinate = self.mapView.centerCoordinate;
 
+    newRestaurant.latitude = [NSNumber numberWithDouble:coordinate.latitude];
+    newRestaurant.longitude = [NSNumber numberWithDouble:coordinate.longitude];
 
+    if(newRestaurant.name == nil){
+      newRestaurant.name = @"Click to add restaurant";
+    }
+       [self.mapView addAnnotation:newRestaurant];
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Save Failed! %@ %@", error, [error localizedDescription]);
+    }
+
+
+   }
+ */
+
+- (void)addCurrentLocationAnnotation {
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    
+    CLLocationCoordinate2D coordinate = self.mapView.centerCoordinate;
+    
+    
     annotation.coordinate = coordinate;
     self.currentPinLat = [NSNumber numberWithDouble:annotation.coordinate.latitude];
     self.currentPinLong = [NSNumber numberWithDouble:annotation.coordinate.longitude];
-
+    
     if(annotation.title == nil){
-      annotation.title = @"Click to add restaurant";
+        annotation.title = @"Click to add restaurant";
     }
-       [self.mapView addAnnotation:annotation];
+    [self.mapView addAnnotation:annotation];
+    
+}
 
-   }
+
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
@@ -223,8 +262,28 @@
 
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    [self performSegueWithIdentifier:@"toDetail" sender:self];
+    
+    AppDelegate* del = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Restaurants"];//gets all data from Entity
+    self.restaurantArray = [del.managedObjectContext executeFetchRequest:req error:nil];
 
+    if ([view.annotation isKindOfClass:[MKPointAnnotation class]]) {
+        [self performSegueWithIdentifier:@"toDetail" sender:self];
+    } else {
+        //self.currentRestaurant =  view.annotation;
+
+        [self performSegueWithIdentifier:@"toTableView" sender:self];
+        /*
+        Restaurants *restaurantTapped =  view.annotation;
+        
+        if(restaurantTapped.toVisits.count == 0){
+            [self performSegueWithIdentifier:@"toDetail" sender:self];
+        }else{
+
+        [self performSegueWithIdentifier:@"toTableView" sender:self];
+        }
+         */
+    }
 }
 
 @end

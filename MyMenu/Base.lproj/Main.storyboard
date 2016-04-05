@@ -54,11 +54,12 @@
                     <connections>
                         <outlet property="mapView" destination="Pan-OR-z9Y" id="sg0-9Z-6XS"/>
                         <segue destination="Eu3-1Q-Hfi" kind="show" identifier="toDetail" id="EFG-Se-UJv"/>
+                        <segue destination="Avk-1g-JE6" kind="show" identifier="toTableView" id="Qei-BR-3KZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4g-Pz-ssw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-541.5" y="-480.5"/>
+            <point key="canvasLocation" x="-565.5" y="-666.5"/>
         </scene>
         <!--Previous Visits View Controller-->
         <scene sceneID="FXA-hd-al2">
@@ -122,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JcR-vl-8Dq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85" y="-1196"/>
+            <point key="canvasLocation" x="-67" y="-208"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="Iph-4Z-cZB">
@@ -173,9 +174,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HkA-Cz-Ocp">
                                 <rect key="frame" x="222" y="72" width="90" height="30"/>
                                 <state key="normal" title="To table view"/>
-                                <connections>
-                                    <segue destination="Avk-1g-JE6" kind="show" identifier="toTableView" id="VvH-Ll-HZ0"/>
-                                </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="KTr-n7-MjZ">
                                 <rect key="frame" x="6" y="353" width="270" height="117"/>
@@ -196,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ur-Zj-SRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="51" y="-546"/>
+            <point key="canvasLocation" x="-67" y="-838"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -237,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138.5" y="151.5"/>
+            <point key="canvasLocation" x="-1111.5" y="-519.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ym6-LL-xlv">
@@ -255,7 +253,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPa-HC-08Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-501" y="308"/>
+            <point key="canvasLocation" x="-1771" y="-538"/>
         </scene>
     </scenes>
 </document>

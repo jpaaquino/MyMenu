@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import <MapKit/MapKit.h>
 
 @class Visits;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Restaurants : NSManagedObject
+@interface Restaurants : NSManagedObject <MKAnnotation>
+
+- (CLLocationCoordinate2D)coordinate;
+- (NSString *)title;
 
 // Insert code here to declare functionality of your managed object subclass
 
