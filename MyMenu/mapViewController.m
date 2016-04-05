@@ -14,10 +14,13 @@
 
 
 @interface mapViewController () <MKMapViewDelegate, CLLocationManagerDelegate,theDelegate>
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) BOOL didZoom;
 @property NSArray *restaurantArray;
+
+@property (nonatomic) Restaurants *selectedRestaurant;
 
 
 @end
@@ -182,7 +185,13 @@
         controller.pinLongitude = self.currentPinLong;
        }
     if ([[segue identifier] isEqualToString:@"toTableView"]) {
-        //PreviousVisitsViewController *controller = (PreviousVisitsViewController *)[segue destinationViewController];
+          PreviousVisitsViewController *controller = (PreviousVisitsViewController *)[segue destinationViewController];
+        //Restaurants *restaurantTapped =  view.annotation;
+        
+        if (controller) {
+            controller.restaurant = self.selectedRestaurant;
+        }
+
         //controller.delegate = self;
 
     }
@@ -272,17 +281,18 @@
     } else {
         //self.currentRestaurant =  view.annotation;
 
+        self.selectedRestaurant = (Restaurants *) view.annotation;
         [self performSegueWithIdentifier:@"toTableView" sender:self];
-        /*
-        Restaurants *restaurantTapped =  view.annotation;
         
-        if(restaurantTapped.toVisits.count == 0){
-            [self performSegueWithIdentifier:@"toDetail" sender:self];
-        }else{
-
-        [self performSegueWithIdentifier:@"toTableView" sender:self];
-        }
-         */
+        
+        
+//        if(self.selectedRestaurant.toVisits.count == 0){
+//            [self performSegueWithIdentifier:@"toDetail" sender:self];
+//        }else{
+//
+//        [self performSegueWithIdentifier:@"toTableView" sender:self];
+//        }
+        
     }
 }
 

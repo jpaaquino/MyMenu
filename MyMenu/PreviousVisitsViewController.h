@@ -18,7 +18,7 @@
 
 @interface PreviousVisitsViewController : UIViewController
 
-//@property (nonatomic, retain) Restaurants *currentRestaurant;
+@property (nonatomic, retain) Restaurants *restaurant;
 
 
 @end

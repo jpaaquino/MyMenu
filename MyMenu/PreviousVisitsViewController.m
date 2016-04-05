@@ -24,6 +24,7 @@
     [super viewDidLoad];
     
     [self fetchRestaurants];
+    NSLog(@" Visits count %lu",self.restaurant.toVisits.count);
     
         // Do any additional setup after loading the view.
     if(self.allVisits == nil){
