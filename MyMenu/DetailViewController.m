@@ -44,6 +44,16 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"visitArray %lu",(unsigned long)self.visitsArray.count);
+
+    if ([[segue identifier] isEqualToString:@"toTableView"]) {
+        PreviousVisitsViewController *controller = (PreviousVisitsViewController *)[segue destinationViewController];
+        controller.objects = self.visitsArray;
+    }
+    
+}
+
 - (void)ratingView:(BTRatingView *)ratingView ratingDidChange:(float)rating
 {
     NSLog(@"RatingDidChange: %f",rating);

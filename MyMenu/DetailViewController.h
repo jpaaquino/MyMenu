@@ -10,6 +10,7 @@
 #import "Restaurants.h"
 #import "AXRatingView.h"
 #import "Visits.h"
+#import "PreviousVisitsViewController.h"
 
 
 @protocol theDelegate <NSObject>
@@ -33,6 +34,7 @@
 @property (strong, nonatomic) NSNumber *pinLatitude;
 @property (weak, nonatomic) IBOutlet UIDatePicker *theDatePicker;
 
+@property NSMutableArray<Visits *> *visitsArray;
 
 - (IBAction)HideKeyboard:(id)sender;
 

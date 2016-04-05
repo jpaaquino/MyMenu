@@ -29,6 +29,7 @@
 		3FF75FD71CB3219900414CE5 /* shinystar.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF75FD61CB3219900414CE5 /* shinystar.png */; };
 		3FF75FD91CB3247A00414CE5 /* staroff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF75FD81CB3247A00414CE5 /* staroff.png */; };
 		3FF75FDC1CB32EE400414CE5 /* visitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF75FDB1CB32EE400414CE5 /* visitCell.m */; };
+		3FF75FDF1CB331E200414CE5 /* PreviousVisitsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF75FDE1CB331E200414CE5 /* PreviousVisitsViewController.m */; };
 		F0B01495B2A55BA354A24E18 /* libPods-MyMenu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12151A9AA18907DE74178F05 /* libPods-MyMenu.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		3FF75FD81CB3247A00414CE5 /* staroff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = staroff.png; path = ../../../starsImages/staroff.png; sourceTree = "<group>"; };
 		3FF75FDA1CB32EE400414CE5 /* visitCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = visitCell.h; sourceTree = "<group>"; };
 		3FF75FDB1CB32EE400414CE5 /* visitCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = visitCell.m; sourceTree = "<group>"; };
+		3FF75FDD1CB331E200414CE5 /* PreviousVisitsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviousVisitsViewController.h; sourceTree = "<group>"; };
+		3FF75FDE1CB331E200414CE5 /* PreviousVisitsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviousVisitsViewController.m; sourceTree = "<group>"; };
 		84263A10B4012E78EE57167E /* Pods-MyMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyMenu/Pods-MyMenu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +112,8 @@
 		3F4A170F1CAF213700B023C7 /* MyMenu */ = {
 			isa = PBXGroup;
 			children = (
+				3FF75FDD1CB331E200414CE5 /* PreviousVisitsViewController.h */,
+				3FF75FDE1CB331E200414CE5 /* PreviousVisitsViewController.m */,
 				3FF75FDA1CB32EE400414CE5 /* visitCell.h */,
 				3FF75FDB1CB32EE400414CE5 /* visitCell.m */,
 				3FF6E5AF1CB30B3000D13EBB /* Visits.h */,
@@ -301,6 +306,7 @@
 				3FF6E5B11CB30B3000D13EBB /* Visits.m in Sources */,
 				3F4A17121CAF213700B023C7 /* main.m in Sources */,
 				3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */,
+				3FF75FDF1CB331E200414CE5 /* PreviousVisitsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

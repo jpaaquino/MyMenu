@@ -18,6 +18,5 @@
 @property (strong, nonatomic) NSNumber *longitude;
 @property (strong, nonatomic) NSNumber *latitude;
 
-@property NSMutableArray<Visits *> *visitsArray;
 
 @end

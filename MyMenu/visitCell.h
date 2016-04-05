@@ -10,4 +10,10 @@
 
 @interface visitCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
+
+@property (weak, nonatomic) IBOutlet UIView *starsView;
+
+
 @end
