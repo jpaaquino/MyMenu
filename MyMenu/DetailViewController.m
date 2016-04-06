@@ -79,6 +79,8 @@
     [newVisit setValue:self.theDatePicker.date forKey:@"date"];
     [newVisit setValue:@(self.ratingView.rating) forKey:@"stars"];
     [newVisit setValue:self.descriptionTextView.text forKey:@"theDescription"];
+    [newVisit setValue:self.restaurantTextField.text forKey:@"name"];
+
     
     [newRestaurant setValue:[NSSet setWithObject:newVisit] forKey:@"toVisits"];
 

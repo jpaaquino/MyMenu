@@ -17,5 +17,7 @@
 @dynamic stars;
 @dynamic date;
 @dynamic toRestaurant;
+@dynamic name;
+
 
 @end

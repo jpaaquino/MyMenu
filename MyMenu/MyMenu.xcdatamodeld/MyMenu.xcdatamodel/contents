@@ -9,12 +9,13 @@
     </entity>
     <entity name="Visits" representedClassName="Visits" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="stars" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="theDescription" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="toRestaurant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Restaurants" inverseName="toVisits" inverseEntity="Restaurants" syncable="YES"/>
     </entity>
     <elements>
         <element name="Restaurants" positionX="-18" positionY="27" width="128" height="120"/>
-        <element name="Visits" positionX="36" positionY="81" width="128" height="105"/>
+        <element name="Visits" positionX="36" positionY="81" width="128" height="120"/>
     </elements>
 </model>

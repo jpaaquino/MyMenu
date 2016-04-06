@@ -16,6 +16,7 @@
 @property (strong,nonatomic) NSArray<Visits*>* allVisits;
 
 
+
 @end
 
 @implementation PreviousVisitsViewController
@@ -23,8 +24,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self fetchRestaurants];
-    NSLog(@" Visits count %lu",self.restaurant.toVisits.count);
+    [self fetchVisits];
+    NSLog(@"Visits count %lu",self.restaurant.toVisits.count);
+    NSLog(@"AllVisits count %lu",(unsigned long)self.allVisits.count);
+
     
         // Do any additional setup after loading the view.
     if(self.allVisits == nil){
@@ -37,6 +40,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self fetchVisits];
     [self.tableView reloadData];
 
     
@@ -45,12 +49,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (void)fetchRestaurants  {
+- (void)fetchVisits  {
     AppDelegate* del = (AppDelegate*)[UIApplication sharedApplication].delegate;
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Visits"];//gets all data from Entity
     req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];//sort ToDOItem properties by title ascending
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", self.restaurant.name];
+    req.predicate = predicate;
+    //self.allVisits = [del.managedObjectContext executeFetchRequest:req error:nil];
+//    self.allVisits = [self.restaurant.toVisits allObjects];
+
     self.allVisits = [del.managedObjectContext executeFetchRequest:req error:nil];
-    NSLog(@"All visits count: %lu",(unsigned long)self.allVisits.count);
+    NSLog(@"self.allVisits = %@", self.allVisits);
+    //NSLog(@"All visits count: %lu",(unsigned long)self.allVisits.count);
 
 }
 -(NSDate *)dateWithOutTime:(NSDate *)datDate {
@@ -93,6 +104,7 @@
     
     // Get our object associated with the row
     Visits *visit = self.allVisits[indexPath.row];
+    //Visits *theVisit = self.restaurant.toVisits;
     // Get a cell using our identifier
     visitCell *visitcell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     // Customize the cell
@@ -107,9 +119,7 @@
     visitcell.starsLabel = [visitcell viewWithTag:3];
     visit.stars = @(4);
 
-
-    NSDate *cleanDate = [self dateWithOutTime:visit.date];
-     visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",cleanDate];
+     visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",visit.date];
 
      visitcell.descriptionLabel.text = visit.theDescription;
     visitcell.starsLabel.text = [NSString stringWithFormat:@"%@ ⭐️",visit.stars ];

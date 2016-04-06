@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *theDescription;
 @property (nullable, nonatomic, retain) NSNumber *stars;
 @property (nullable, nonatomic, retain) NSDate *date;
+@property (nullable, nonatomic, retain) NSString *name;
+
 @property (nullable, nonatomic, retain) Restaurants *toRestaurant;
 
 @end

@@ -89,7 +89,7 @@
 //        
 //        [self.mapView addAnnotation:annotation];
 //    }
-    NSLog(@"%lu",(unsigned long)self.restaurantArray.count);
+    //NSLog(@"%lu",(unsigned long)self.restaurantArray.count);
     [self.mapView addAnnotations:self.restaurantArray];
 }
 
