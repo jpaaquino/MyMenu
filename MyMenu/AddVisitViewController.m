@@ -50,4 +50,33 @@
 }
 */
 
+- (IBAction)saveAction:(id)sender {
+    NSManagedObjectContext* context = ((AppDelegate*)[[UIApplication sharedApplication] delegate]). managedObjectContext;
+    
+    
+    NSManagedObject *newVisit = [NSEntityDescription insertNewObjectForEntityForName:@"Visits" inManagedObjectContext:context];
+    
+    [newVisit setValue:self.datePicker.date forKey:@"date"];
+    [newVisit setValue:@(self.ratingView.rating) forKey:@"stars"];
+    [newVisit setValue:self.descriptionTextView.text forKey:@"theDescription"];
+    [newVisit setValue:self.restaurantTextField.text forKey:@"name"];
+    
+    
+    [self.currentRestaurant setValue:[NSSet setWithObject:newVisit] forKey:@"toVisits"];
+    
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Save Failed! %@ %@", error, [error localizedDescription]);
+    }
+    
+    
+    [self.navigationController popViewControllerAnimated:YES];
+
+}
+- (IBAction)HideKeyboard:(id)sender {
+    [sender resignFirstResponder];
+    
+}
+
 @end

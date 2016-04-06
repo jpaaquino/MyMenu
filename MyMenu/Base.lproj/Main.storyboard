@@ -275,6 +275,9 @@
                                 <state key="normal" title="SAVE">
                                     <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveAction:" destination="7NA-K1-h3v" eventType="touchUpInside" id="4g8-50-Qmf"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Restaurant name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="x0F-Ij-7Ib">
                                 <rect key="frame" x="6" y="105" width="270" height="30"/>
