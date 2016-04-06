@@ -14,6 +14,7 @@
 #import "mapViewController.h"
 #import "mapViewController.h"
 #import "AppDelegate.h"
+#import "AddVisitViewController.h"
 
 
 @interface PreviousVisitsViewController : UIViewController

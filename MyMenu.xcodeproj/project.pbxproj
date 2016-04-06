@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2BBA211CB55ECE00DC9549 /* AddVisitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2BBA201CB55ECE00DC9549 /* AddVisitViewController.m */; };
 		3F44A6F91CB429BB00E525F1 /* Restaurants+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F44A6F21CB429BB00E525F1 /* Restaurants+CoreDataProperties.m */; };
 		3F44A6FA1CB429BB00E525F1 /* Restaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F44A6F41CB429BB00E525F1 /* Restaurants.m */; };
 		3F44A6FB1CB429BB00E525F1 /* Visits+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F44A6F61CB429BB00E525F1 /* Visits+CoreDataProperties.m */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		12151A9AA18907DE74178F05 /* libPods-MyMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED6E1E7E8C932E139E70F37 /* Pods-MyMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMenu/Pods-MyMenu.release.xcconfig"; sourceTree = "<group>"; };
+		3F2BBA1F1CB55ECE00DC9549 /* AddVisitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddVisitViewController.h; sourceTree = "<group>"; };
+		3F2BBA201CB55ECE00DC9549 /* AddVisitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddVisitViewController.m; sourceTree = "<group>"; };
 		3F44A6F11CB429BB00E525F1 /* Restaurants+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Restaurants+CoreDataProperties.h"; sourceTree = "<group>"; };
 		3F44A6F21CB429BB00E525F1 /* Restaurants+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Restaurants+CoreDataProperties.m"; sourceTree = "<group>"; };
 		3F44A6F31CB429BB00E525F1 /* Restaurants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurants.h; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				3F9FD5CD1CB1F7E600491A58 /* DetailViewController.h */,
 				3F9FD5CE1CB1F7E600491A58 /* DetailViewController.m */,
 				3F4A17191CAF213700B023C7 /* Main.storyboard */,
+				3F2BBA1F1CB55ECE00DC9549 /* AddVisitViewController.h */,
+				3F2BBA201CB55ECE00DC9549 /* AddVisitViewController.m */,
 				3F4A171F1CAF213700B023C7 /* Assets.xcassets */,
 				3F4A17211CAF213700B023C7 /* LaunchScreen.storyboard */,
 				3F4A17241CAF213700B023C7 /* Info.plist */,
@@ -315,6 +320,7 @@
 				3F4A171E1CAF213700B023C7 /* MyMenu.xcdatamodeld in Sources */,
 				3FF75FDC1CB32EE400414CE5 /* visitCell.m in Sources */,
 				3F4A17121CAF213700B023C7 /* main.m in Sources */,
+				3F2BBA211CB55ECE00DC9549 /* AddVisitViewController.m in Sources */,
 				3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */,
 				3F44A6FC1CB429BB00E525F1 /* Visits.m in Sources */,
 				3F44A6FA1CB429BB00E525F1 /* Restaurants.m in Sources */,

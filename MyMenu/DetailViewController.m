@@ -25,16 +25,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self addStarsView];
    
+    
+    // Do any additional setup after loading the view.
+}
+-(void)addStarsView{
     self.ratingView.delegate = self;
     self.ratingView.emptyStarImage = [UIImage imageNamed:@"staroff.png"];
     self.ratingView.fullStarImage = [UIImage imageNamed:@"shinystar.png"];
     self.ratingView.editable = YES;
     self.ratingView.maxRating = 5;
     self.ratingView.rating = 5;
-    
-    // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning {

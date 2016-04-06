@@ -23,10 +23,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+        UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewVisit)];
+        self.navigationItem.rightBarButtonItem = addButton;
     
     [self fetchVisits];
-    NSLog(@"Visits count %lu",self.restaurant.toVisits.count);
-    NSLog(@"AllVisits count %lu",(unsigned long)self.allVisits.count);
+   // NSLog(@"Visits count %lu",self.restaurant.toVisits.count);
+   // NSLog(@"AllVisits count %lu",(unsigned long)self.allVisits.count);
 
     
         // Do any additional setup after loading the view.
@@ -37,6 +39,18 @@
     self.tableView.dataSource = self;
 
 }
+-(void)insertNewVisit{
+    [self performSegueWithIdentifier:@"toAddVisit" sender:self];
+   
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"toAddVisit"]) {
+        AddVisitViewController *controller = (AddVisitViewController *)[segue destinationViewController];
+        controller.currentRestaurant = self.restaurant;
+    }
+    
+}
+
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -60,7 +74,7 @@
 //    self.allVisits = [self.restaurant.toVisits allObjects];
 
     self.allVisits = [del.managedObjectContext executeFetchRequest:req error:nil];
-    NSLog(@"self.allVisits = %@", self.allVisits);
+    //NSLog(@"self.allVisits = %@", self.allVisits);
     //NSLog(@"All visits count: %lu",(unsigned long)self.allVisits.count);
 
 }
