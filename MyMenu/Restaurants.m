@@ -20,5 +20,9 @@
 - (NSString *)title {
     return self.name;
 }
+//- (NSString *)title {
+//    return [NSString stringWithFormat:@"%@ %@", self.name,self.avgStars];
+//}
+
 
 @end

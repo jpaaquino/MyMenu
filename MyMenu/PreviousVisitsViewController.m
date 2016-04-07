@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (strong,nonatomic) NSArray<Visits*>* allVisits;
+@property (strong,nonatomic) NSMutableArray<Visits*>* allVisits;
 
 
 
@@ -35,7 +35,7 @@
     
         // Do any additional setup after loading the view.
     if(self.allVisits == nil){
-    self.allVisits = @[];
+    self.allVisits = @[].mutableCopy;
     }
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -75,18 +75,19 @@
     //self.allVisits = [del.managedObjectContext executeFetchRequest:req error:nil];
 //    self.allVisits = [self.restaurant.toVisits allObjects];
 
-    self.allVisits = [del.managedObjectContext executeFetchRequest:req error:nil];
+    self.allVisits = [del.managedObjectContext executeFetchRequest:req error:nil].mutableCopy;
     //NSLog(@"self.allVisits = %@", self.allVisits);
     //NSLog(@"All visits count: %lu",(unsigned long)self.allVisits.count);
 
 }
--(NSDate *)dateWithOutTime:(NSDate *)datDate {
-    if(datDate == nil ) {
-        datDate = [NSDate date];
-    }
-    NSDateComponents* comps = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:datDate];
-    return [[NSCalendar currentCalendar] dateFromComponents:comps];
-}
+//-(NSDate *)dateWithOutTime:(NSDate *)datDate {
+//    if(datDate == nil ) {
+//        datDate = [NSDate date];
+//    }
+//    NSDateFormatter
+//    NSDateComponents* comps = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:datDate];
+//    return [[NSCalendar currentCalendar] dateFromComponents:comps];
+//}
 
 /*
 #pragma mark - Navigation
@@ -133,9 +134,19 @@
     visitcell.dateLabel = [visitcell viewWithTag:1];
     visitcell.descriptionLabel = [visitcell viewWithTag:2];
     visitcell.starsLabel = [visitcell viewWithTag:3];
-    //visit.stars = @(4);
+    
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
 
-     visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",visit.date];
+    NSDate *date = [NSDate date];
+    //[format setDateFormat:@"MMM dd, yyyy"];
+    [format setDateFormat:@"dd-MMM-yyyy"];
+    NSLog(@"My date with out format = %@",date);
+    NSString *dateString = [format stringFromDate:date];
+    NSLog(@"My date is = %@",dateString);
+    
+    visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",dateString];
+
+    //visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",visit.date];
 
      visitcell.descriptionLabel.text = visit.theDescription;
     visitcell.starsLabel.text = [NSString stringWithFormat:@"%@ ⭐️",visit.stars ];
@@ -174,14 +185,17 @@
 //    return proposedDestinationIndexPath;
 //}
 
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [self.allVisits removeObjectAtIndex:indexPath.row];
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-//    }
-//}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        Visits *toDelete = self.allVisits[indexPath.row];
+        [toDelete.managedObjectContext deleteObject:toDelete];
+        [toDelete.managedObjectContext save:nil];
+        [self.allVisits removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
+}
 
 @end
 

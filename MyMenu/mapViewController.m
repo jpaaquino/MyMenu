@@ -46,6 +46,9 @@
     // [self geocodeAnAddress];
   
 }
+-(void)calculateAvgStars{
+
+   }
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
    
@@ -103,18 +106,20 @@
     AppDelegate* del = (AppDelegate*)[UIApplication sharedApplication].delegate;
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Restaurants"];//gets all data from Entity
     self.restaurantArray = [del.managedObjectContext executeFetchRequest:req error:nil];
-
+///////////
+    
 //    for (Restaurants *restaurant in self.restaurantArray) {
-//        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-//        
-//        // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([theatre[@"lat"] doubleValue], [theatre[@"long"] doubleValue]);
-//        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([restaurant.latitude doubleValue], [restaurant.longitude doubleValue]);
-//        
-//        annotation.coordinate = coordinate;
-//        annotation.title = restaurant.name;
-//        
-//        [self.mapView addAnnotation:annotation];
-//    }
+//        NSNumber *nVisits = @(restaurant.toVisits.count);
+//        NSLog(@"%@",nVisits);
+    
+//        for (Visits *aVisit in restaurant.toVisits){
+//            NSNumber *totalStars = aVisit.stars + totalStars;
+//            restaurant.avgStars = totalStars/nVisits;
+//        }
+        
+       //    }
+    
+/////////
     //NSLog(@"%lu",(unsigned long)self.restaurantArray.count);
     [self.mapView addAnnotations:self.restaurantArray];
 }
@@ -263,6 +268,7 @@
     
     
     annotation.coordinate = coordinate;
+
     self.currentPinLat = [NSNumber numberWithDouble:annotation.coordinate.latitude];
     self.currentPinLong = [NSNumber numberWithDouble:annotation.coordinate.longitude];
     
@@ -286,9 +292,11 @@
     //annotationView.draggable = YES;
     annotationView.canShowCallout = YES;
     UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+
     annotationView.rightCalloutAccessoryView = infoButton;
     
     annotationView.tintColor = [UIColor orangeColor];
+    
 
     return annotationView;
 }
