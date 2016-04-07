@@ -103,7 +103,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // This is the delegate method that gets called when we selected a cell
-    NSLog(@"Cell selected for section:%ld, row: %ld", indexPath.section, indexPath.row);
+    NSLog(@"Cell selected for section:%ld, row: %ld", (long)indexPath.section, indexPath.row);
 }
 
 
