@@ -15,7 +15,7 @@
 
 
 
-@interface DetailViewController ()<BTRatingViewDelegate>
+@interface DetailViewController ()<BTRatingViewDelegate,UITextViewDelegate,UITextFieldDelegate>
 @property (nonatomic, strong) IBOutlet BTRatingView *ratingView;
 
 
@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self registerForKeyboardNotifications];
+
     [self addStarsView];
    
     
@@ -39,6 +41,36 @@
     self.ratingView.rating = 5;
 
 }
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    [self.dismissKbButton setHidden:NO];
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    [UIView animateWithDuration:0.7 animations:^{
+        self.view.transform = CGAffineTransformMakeTranslation(0, -kbSize.height);
+        
+        
+    }
+     ];
+    
+}
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    self.view.transform = CGAffineTransformIdentity;
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -118,6 +150,12 @@
 - (IBAction)HideKeyboard:(id)sender {
     [sender resignFirstResponder];
     
+}
+
+- (IBAction)dismissKb:(id)sender {
+    [self.dismissKbButton setHidden:YES];
+    [self.view endEditing:YES];
+
 }
 
 

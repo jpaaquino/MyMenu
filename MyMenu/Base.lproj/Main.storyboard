@@ -178,12 +178,20 @@
                                     <action selector="HideKeyboard:" destination="Eu3-1Q-Hfi" eventType="editingDidEndOnExit" id="B6H-JM-kah"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwZ-oE-r4w">
+                                <rect key="frame" x="286" y="498" width="29" height="30"/>
+                                <state key="normal" title="⬇️"/>
+                                <connections>
+                                    <action selector="dismissKb:" destination="Eu3-1Q-Hfi" eventType="touchUpInside" id="QUH-Ff-d99"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="g1d-3s-fqf" id="Ru7-qK-i6V"/>
+                        <outlet property="dismissKbButton" destination="vwZ-oE-r4w" id="1cV-I3-82h"/>
                         <outlet property="ratingView" destination="msT-tp-KwC" id="56K-aG-FJl"/>
                         <outlet property="restaurantTextField" destination="pg8-2w-JeM" id="eVb-Ru-Wlk"/>
                         <outlet property="theDatePicker" destination="KTr-n7-MjZ" id="lOg-9F-aOo"/>

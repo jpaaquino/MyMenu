@@ -27,6 +27,7 @@
 @property int numberOfRatings;
 
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UIButton *dismissKbButton;
 
 @property (weak, nonatomic) id<theDelegate> delegate;
 
@@ -37,6 +38,7 @@
 @property NSMutableArray<Visits *> *visitsArray;
 
 - (IBAction)HideKeyboard:(id)sender;
+- (IBAction)dismissKb:(id)sender;
 
 
 @end
