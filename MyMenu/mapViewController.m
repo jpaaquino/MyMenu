@@ -299,7 +299,7 @@
 
     annotationView.rightCalloutAccessoryView = infoButton;
     
-    annotationView.tintColor = [UIColor orangeColor];
+    annotationView.tintColor = [UIColor blueColor];
     
 
     return annotationView;

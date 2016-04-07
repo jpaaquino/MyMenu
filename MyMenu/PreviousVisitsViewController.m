@@ -133,9 +133,9 @@
     // Customize the cell
     
     if(indexPath.row % 2 == 0){
-        visitcell.backgroundColor = [UIColor greenColor];
+        visitcell.backgroundColor = [UIColor blueColor];
     }else{
-        visitcell.backgroundColor = [UIColor lightGrayColor];
+        visitcell.backgroundColor = [UIColor colorWithRed:0.000 green:0.282 blue:0.729 alpha:1.0];
     }
     visitcell.dateLabel = [visitcell viewWithTag:1];
     visitcell.descriptionLabel = [visitcell viewWithTag:2];
