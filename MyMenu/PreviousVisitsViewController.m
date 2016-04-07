@@ -103,7 +103,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // This is the delegate method that gets called when we selected a cell
-    NSLog(@"Cell selected for section:%ld, row: %ld", (long)indexPath.section, indexPath.row);
+    NSLog(@"Cell selected for section:%ld, row: %ld", (long)indexPath.section, (long)indexPath.row);
 }
 
 
@@ -140,9 +140,7 @@
     NSDate *date = [NSDate date];
     //[format setDateFormat:@"MMM dd, yyyy"];
     [format setDateFormat:@"dd-MMM-yyyy"];
-    NSLog(@"My date with out format = %@",date);
     NSString *dateString = [format stringFromDate:date];
-    NSLog(@"My date is = %@",dateString);
     
     visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",dateString];
 

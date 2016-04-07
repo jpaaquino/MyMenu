@@ -17,12 +17,12 @@
     return CLLocationCoordinate2DMake([self.latitude doubleValue], [self.longitude doubleValue]);
 }
 
-- (NSString *)title {
-    return self.name;
-}
 //- (NSString *)title {
-//    return [NSString stringWithFormat:@"%@ %@", self.name,self.avgStars];
+//    return self.name;
 //}
+- (NSString *)title {
+    return [NSString stringWithFormat:@"%@ %@ ⭐️", self.name,self.avgStars];
+}
 
 
 @end

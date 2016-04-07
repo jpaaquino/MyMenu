@@ -108,17 +108,18 @@
     self.restaurantArray = [del.managedObjectContext executeFetchRequest:req error:nil];
 ///////////
     
-//    for (Restaurants *restaurant in self.restaurantArray) {
-//        NSNumber *nVisits = @(restaurant.toVisits.count);
-//        NSLog(@"%@",nVisits);
-    
-//        for (Visits *aVisit in restaurant.toVisits){
-//            NSNumber *totalStars = aVisit.stars + totalStars;
-//            restaurant.avgStars = totalStars/nVisits;
-//        }
+    for (Restaurants *restaurant in self.restaurantArray) {
+        int nVisits = (int)restaurant.toVisits.count;
+        NSLog(@"%@ %i",restaurant.name, nVisits);
+        float totalStars = 0;
+        for (Visits *aVisit in restaurant.toVisits){
+            totalStars = totalStars + aVisit.stars.floatValue;
+            restaurant.avgStars = @(totalStars/nVisits);
+
+        }
         
-       //    }
-    
+           }
+
 /////////
     //NSLog(@"%lu",(unsigned long)self.restaurantArray.count);
     [self.mapView addAnnotations:self.restaurantArray];

@@ -109,9 +109,8 @@
     [newVisit setValue:self.descriptionTextView.text forKey:@"theDescription"];
     [newVisit setValue:self.restaurantTextField.text forKey:@"name"];
     
-    
-    [self.currentRestaurant setValue:[NSSet setWithObject:newVisit] forKey:@"toVisits"];
-    
+    NSMutableSet *toVisits = [self.currentRestaurant valueForKey:@"toVisits"];
+    [toVisits addObject:newVisit];
     
     NSError *error = nil;
     if (![context save:&error]) {
