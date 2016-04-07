@@ -51,15 +51,7 @@
    }
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
-   
-//    for (id <MKAnnotation>  myAnnot in [self.mapView annotations])
-//    {
-//        if (![myAnnot isKindOfClass:[MKUserLocation class]])
-//        {
-//            [self.mapView removeAnnotation:myAnnot];
-//        }
-//    }
-
+  
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -105,7 +97,9 @@
     // Loop over our stations array to create, configure and add the annotation to the map view
     AppDelegate* del = (AppDelegate*)[UIApplication sharedApplication].delegate;
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Restaurants"];//gets all data from Entity
+
     self.restaurantArray = [del.managedObjectContext executeFetchRequest:req error:nil];
+    
 ///////////
     
     for (Restaurants *restaurant in self.restaurantArray) {
@@ -114,11 +108,18 @@
         float totalStars = 0;
         for (Visits *aVisit in restaurant.toVisits){
             totalStars = totalStars + aVisit.stars.floatValue;
-            restaurant.avgStars = @(totalStars/nVisits);
-
+            
+        }
+        restaurant.avgStars = @(totalStars/nVisits);
+        
+        NSError * error = nil;
+        if (![del.managedObjectContext save:&error])
+        {
+            NSLog(@"Error ! %@", error);
         }
         
-           }
+        
+    }
 
 /////////
     //NSLog(@"%lu",(unsigned long)self.restaurantArray.count);
@@ -197,7 +198,9 @@
     CLLocationCoordinate2D coordinate = location.coordinate;
     //CLLocationCoordinate2D coordinate = self.mapView.centerCoordinate;
 
-    MKCoordinateSpan span = MKCoordinateSpanMake(0.01, 0.01);
+    //MKCoordinateSpan span = MKCoordinateSpanMake(0.01, 0.01);
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.03,0.03);
+
     MKCoordinateRegion region = MKCoordinateRegionMake(coordinate, span);
    
     
@@ -320,7 +323,9 @@
         self.selectedRestaurant = (Restaurants *) view.annotation;
         [self performSegueWithIdentifier:@"toTableView" sender:self];
         
+     
         
+
         
 //        if(self.selectedRestaurant.toVisits.count == 0){
 //            [self performSegueWithIdentifier:@"toDetail" sender:self];

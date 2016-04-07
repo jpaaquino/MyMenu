@@ -21,7 +21,14 @@
 //    return self.name;
 //}
 - (NSString *)title {
-    return [NSString stringWithFormat:@"%@ %@ ⭐️", self.name,self.avgStars];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    
+    [formatter setMaximumFractionDigits:2];
+    
+    [formatter setMinimumFractionDigits:0];
+    NSString *result = [formatter stringFromNumber:self.avgStars];
+    
+    return [NSString stringWithFormat:@"%@ - %@ ⭐️", self.name,result];
 }
 
 

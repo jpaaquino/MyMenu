@@ -9,6 +9,7 @@
 #import "AddVisitViewController.h"
 #import "AppDelegate.h"
 #import "UIView+FormScroll.h"
+#import "Visits.h"
 
 @interface AddVisitViewController ()<BTRatingViewDelegate,UITextViewDelegate,UITextFieldDelegate>
 
@@ -102,15 +103,20 @@
     NSManagedObjectContext* context = ((AppDelegate*)[[UIApplication sharedApplication] delegate]). managedObjectContext;
     
     
-    NSManagedObject *newVisit = [NSEntityDescription insertNewObjectForEntityForName:@"Visits" inManagedObjectContext:context];
+    Visits *newVisit = [NSEntityDescription insertNewObjectForEntityForName:@"Visits" inManagedObjectContext:context];
     
-    [newVisit setValue:self.datePicker.date forKey:@"date"];
-    [newVisit setValue:@(self.ratingView.rating) forKey:@"stars"];
+    newVisit.date = self.datePicker.date;
+//    [newVisit setValue:self.datePicker.date forKey:@"date"];
+    newVisit.stars = @(self.ratingView.rating);
+    //[newVisit setValue:@(self.ratingView.rating) forKey:@"stars"];
     [newVisit setValue:self.descriptionTextView.text forKey:@"theDescription"];
+    newVisit.name = self.restaurantTextField.text;
     [newVisit setValue:self.restaurantTextField.text forKey:@"name"];
     
-    NSMutableSet *toVisits = [self.currentRestaurant valueForKey:@"toVisits"];
-    [toVisits addObject:newVisit];
+    
+    [self.currentRestaurant addToVisitsObject:newVisit];
+//    NSMutableSet *toVisits = [self.currentRestaurant valueForKey:@"toVisits"];
+//    [toVisits addObject:newVisit];
     
     NSError *error = nil;
     if (![context save:&error]) {

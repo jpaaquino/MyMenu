@@ -78,6 +78,12 @@
     self.allVisits = [del.managedObjectContext executeFetchRequest:req error:nil].mutableCopy;
     //NSLog(@"self.allVisits = %@", self.allVisits);
     //NSLog(@"All visits count: %lu",(unsigned long)self.allVisits.count);
+    NSError * error = nil;
+    if (![del.managedObjectContext save:&error])
+    {
+        NSLog(@"Error ! %@", error);
+    }
+
 
 }
 //-(NSDate *)dateWithOutTime:(NSDate *)datDate {
@@ -185,11 +191,18 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSManagedObjectContext* context = ((AppDelegate*)[[UIApplication sharedApplication] delegate]). managedObjectContext;
+
         Visits *toDelete = self.allVisits[indexPath.row];
         [toDelete.managedObjectContext deleteObject:toDelete];
         [toDelete.managedObjectContext save:nil];
         [self.allVisits removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSError *error = nil;//save
+        if (![context save:&error]) {
+            NSLog(@"Save Failed! %@ %@", error, [error localizedDescription]);
+        }
+
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }

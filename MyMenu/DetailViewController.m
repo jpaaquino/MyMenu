@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.restaurantTextField.backgroundColor = [UIColor whiteColor];
+
     [self registerForKeyboardNotifications];
 
     [self addStarsView];
@@ -101,6 +103,8 @@
 }
 
 - (IBAction)saveAction:(id)sender {
+    
+        
     NSManagedObjectContext* context = ((AppDelegate*)[[UIApplication sharedApplication] delegate]). managedObjectContext;
 
     NSManagedObject *newRestaurant = [NSEntityDescription insertNewObjectForEntityForName:@"Restaurants" inManagedObjectContext:context];
@@ -127,6 +131,7 @@
     
     
     [self.navigationController popViewControllerAnimated:YES];
+    
 
 }
 //- (IBAction)saveAction:(id)sender {
