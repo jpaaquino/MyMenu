@@ -32,7 +32,7 @@
     self.ratingView.editable = YES;
     self.ratingView.maxRating = 5;
     self.ratingView.rating = 5;
-    
+
 }
 - (void)ratingView:(BTRatingView *)ratingView ratingDidChange:(float)rating
 {

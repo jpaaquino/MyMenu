@@ -23,9 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewVisit)];
         self.navigationItem.rightBarButtonItem = addButton;
        self.navigationItem.title = self.restaurant.name;
+
 
     
     [self fetchVisits];
@@ -133,9 +135,9 @@
     // Customize the cell
     
     if(indexPath.row % 2 == 0){
-        visitcell.backgroundColor = [UIColor blueColor];
+        visitcell.backgroundColor = [UIColor colorWithRed:0.990 green:0.990 blue:0.990 alpha:1.0];
     }else{
-        visitcell.backgroundColor = [UIColor colorWithRed:0.000 green:0.282 blue:0.729 alpha:1.0];
+        visitcell.backgroundColor = [UIColor colorWithRed:0.871 green:0.879 blue:0.856 alpha:1.0];
     }
     visitcell.dateLabel = [visitcell viewWithTag:1];
     visitcell.descriptionLabel = [visitcell viewWithTag:2];
@@ -153,7 +155,31 @@
     //visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",visit.date];
 
      visitcell.descriptionLabel.text = visit.theDescription;
-    visitcell.starsLabel.text = [NSString stringWithFormat:@"%@ ⭐️",visit.stars ];
+    switch(visit.stars.intValue) {
+        case 1:
+            visitcell.starsLabel.text = @"⭐️";
+            break;
+            
+        case 2:
+            visitcell.starsLabel.text = @"⭐️⭐️";
+            break;
+        case 3:
+            visitcell.starsLabel.text = @"⭐️⭐️⭐️";
+            break;
+        case 4:
+            visitcell.starsLabel.text = @"⭐️⭐️⭐️⭐️";
+            break;
+        case 5:
+            visitcell.starsLabel.text = @"⭐️⭐️⭐️⭐️⭐️";
+            break;
+
+        default:
+            visitcell.starsLabel.text = @"⭐️⭐️⭐️⭐️⭐️";
+       }
+    
+    //visitcell.starsLabel.text = [NSString stringWithFormat:@"%@ ⭐️",visit.stars ];
+
+
 
     
       return visitcell;
