@@ -131,7 +131,7 @@
     visitcell.dateLabel = [visitcell viewWithTag:1];
     visitcell.descriptionLabel = [visitcell viewWithTag:2];
     visitcell.starsLabel = [visitcell viewWithTag:3];
-    visit.stars = @(4);
+    //visit.stars = @(4);
 
      visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",visit.date];
 

@@ -22,5 +22,6 @@
 
 
 -(IBAction)dropPinAction:(id)sender;
+//- (IBAction)deleteRestaurant:(id)sender;
 
 @end
