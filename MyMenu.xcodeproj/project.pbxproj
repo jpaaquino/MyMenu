@@ -14,7 +14,6 @@
 		3F44A6FC1CB429BB00E525F1 /* Visits.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F44A6F81CB429BB00E525F1 /* Visits.m */; };
 		3F4A17121CAF213700B023C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A17111CAF213700B023C7 /* main.m */; };
 		3F4A17151CAF213700B023C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A17141CAF213700B023C7 /* AppDelegate.m */; };
-		3F4A17181CAF213700B023C7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A17171CAF213700B023C7 /* ViewController.m */; };
 		3F4A171B1CAF213700B023C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A17191CAF213700B023C7 /* Main.storyboard */; };
 		3F4A171E1CAF213700B023C7 /* MyMenu.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3F4A171C1CAF213700B023C7 /* MyMenu.xcdatamodeld */; };
 		3F4A17201CAF213700B023C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F4A171F1CAF213700B023C7 /* Assets.xcassets */; };
@@ -54,8 +53,6 @@
 		3F4A17111CAF213700B023C7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3F4A17131CAF213700B023C7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F4A17141CAF213700B023C7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3F4A17161CAF213700B023C7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3F4A17171CAF213700B023C7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3F4A171A1CAF213700B023C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3F4A171D1CAF213700B023C7 /* MyMenu.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyMenu.xcdatamodel; sourceTree = "<group>"; };
 		3F4A171F1CAF213700B023C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,8 +135,6 @@
 				3FF75FDB1CB32EE400414CE5 /* visitCell.m */,
 				3F4A17131CAF213700B023C7 /* AppDelegate.h */,
 				3F4A17141CAF213700B023C7 /* AppDelegate.m */,
-				3F4A17161CAF213700B023C7 /* ViewController.h */,
-				3F4A17171CAF213700B023C7 /* ViewController.m */,
 				3F4A172A1CB044E500B023C7 /* mapViewController.h */,
 				3F4A172B1CB044E500B023C7 /* mapViewController.m */,
 				3F9FD5CD1CB1F7E600491A58 /* DetailViewController.h */,
@@ -317,7 +312,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F4A17181CAF213700B023C7 /* ViewController.m in Sources */,
 				3F4A17151CAF213700B023C7 /* AppDelegate.m in Sources */,
 				3F4A172C1CB044E500B023C7 /* mapViewController.m in Sources */,
 				3F44A6F91CB429BB00E525F1 /* Restaurants+CoreDataProperties.m in Sources */,

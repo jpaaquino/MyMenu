@@ -10,7 +10,6 @@
 #import "Visits.h"
 #import "visitCell.h"
 #import "Restaurants.h"
-#import "ViewController.h"
 #import "mapViewController.h"
 #import "mapViewController.h"
 #import "AppDelegate.h"

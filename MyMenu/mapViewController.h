@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "Restaurants.h"
 #import "DetailViewController.h"
-#import "ViewController.h"
 
 
 
