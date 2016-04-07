@@ -25,6 +25,8 @@
     [super viewDidLoad];
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewVisit)];
         self.navigationItem.rightBarButtonItem = addButton;
+       self.navigationItem.title = self.restaurant.name;
+
     
     [self fetchVisits];
    // NSLog(@"Visits count %lu",self.restaurant.toVisits.count);
@@ -144,6 +146,10 @@
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
         return NO;
     }
+
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+//    return self.restaurant.name;
+//}
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
