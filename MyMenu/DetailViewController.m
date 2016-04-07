@@ -54,15 +54,15 @@
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
+    if(self.descriptionTextView.isFirstResponder){
     [self.dismissKbButton setHidden:NO];
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     [UIView animateWithDuration:0.7 animations:^{
         self.view.transform = CGAffineTransformMakeTranslation(0, -kbSize.height);
-        
-        
     }
      ];
+    }
     
 }
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
