@@ -66,7 +66,7 @@
 - (void)fetchVisits  {
     AppDelegate* del = (AppDelegate*)[UIApplication sharedApplication].delegate;
     NSFetchRequest *req = [NSFetchRequest fetchRequestWithEntityName:@"Visits"];//gets all data from Entity
-    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES]];//sort ToDOItem properties by title ascending
+    req.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:NO]];//sort ToDOItem properties by title ascending
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@", self.restaurant.name];
     req.predicate = predicate;

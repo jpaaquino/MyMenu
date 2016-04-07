@@ -25,6 +25,7 @@
 		3F4A17321CB045A300B023C7 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4A17311CB045A300B023C7 /* AddressBookUI.framework */; };
 		3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9FD5CE1CB1F7E600491A58 /* DetailViewController.m */; };
 		3FD6DE381CB06E47001F7CFC /* lighthouseLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */; };
+		3FEA41B81CB5C71400A972DA /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA41B71CB5C71400A972DA /* UIView+FormScroll.m */; };
 		3FF06F991CB31A6D0088F8B1 /* rateOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF06F971CB31A6D0088F8B1 /* rateOff.png */; };
 		3FF06F9A1CB31A6D0088F8B1 /* rateOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF06F981CB31A6D0088F8B1 /* rateOn.png */; };
 		3FF6E5AE1CB2E8B200D13EBB /* bullseye.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */; };
@@ -68,6 +69,8 @@
 		3F9FD5CD1CB1F7E600491A58 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		3F9FD5CE1CB1F7E600491A58 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lighthouseLocation.gpx; path = ../../../lighthouseLocation.gpx; sourceTree = "<group>"; };
+		3FEA41B61CB5C71400A972DA /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
+		3FEA41B71CB5C71400A972DA /* UIView+FormScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormScroll.m"; sourceTree = "<group>"; };
 		3FF06F971CB31A6D0088F8B1 /* rateOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rateOff.png; path = ../../../rateOff.png; sourceTree = "<group>"; };
 		3FF06F981CB31A6D0088F8B1 /* rateOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rateOn.png; path = ../../../rateOn.png; sourceTree = "<group>"; };
 		3FF6E5AD1CB2E8B200D13EBB /* bullseye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bullseye.png; path = ../../../bullseye.png; sourceTree = "<group>"; };
@@ -144,6 +147,8 @@
 				3F4A17191CAF213700B023C7 /* Main.storyboard */,
 				3F2BBA1F1CB55ECE00DC9549 /* AddVisitViewController.h */,
 				3F2BBA201CB55ECE00DC9549 /* AddVisitViewController.m */,
+				3FEA41B61CB5C71400A972DA /* UIView+FormScroll.h */,
+				3FEA41B71CB5C71400A972DA /* UIView+FormScroll.m */,
 				3F4A171F1CAF213700B023C7 /* Assets.xcassets */,
 				3F4A17211CAF213700B023C7 /* LaunchScreen.storyboard */,
 				3F4A17241CAF213700B023C7 /* Info.plist */,
@@ -319,6 +324,7 @@
 				3F44A6FB1CB429BB00E525F1 /* Visits+CoreDataProperties.m in Sources */,
 				3F4A171E1CAF213700B023C7 /* MyMenu.xcdatamodeld in Sources */,
 				3FF75FDC1CB32EE400414CE5 /* visitCell.m in Sources */,
+				3FEA41B81CB5C71400A972DA /* UIView+FormScroll.m in Sources */,
 				3F4A17121CAF213700B023C7 /* main.m in Sources */,
 				3F2BBA211CB55ECE00DC9549 /* AddVisitViewController.m in Sources */,
 				3F9FD5CF1CB1F7E600491A58 /* DetailViewController.m in Sources */,

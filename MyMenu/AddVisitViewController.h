@@ -22,7 +22,11 @@
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
+@property (weak, nonatomic) IBOutlet UIButton *dismissKbButton;
+
 - (IBAction)saveAction:(id)sender;
 - (IBAction)HideKeyboard:(id)sender;
+- (IBAction)dismissKb:(id)sender;
 
 @end
