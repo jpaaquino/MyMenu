@@ -17,17 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My MENU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfZ-oP-14I">
-                                <rect key="frame" x="159" y="264" width="283" height="72"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="My MENU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfZ-oP-14I">
+                                <rect key="frame" x="159" y="194" width="283" height="72"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="57"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="couvert.png" translatesAutoresizingMaskIntoConstraints="NO" id="R8G-u3-Glj">
+                                <rect key="frame" x="226" y="295" width="149" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="8cE-k1-CX9"/>
+                                    <constraint firstAttribute="height" constant="90" id="M6y-eO-n2s"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ZfZ-oP-14I" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Kdb-60-h10"/>
+                            <constraint firstItem="R8G-u3-Glj" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dmk-r1-EIE"/>
+                            <constraint firstItem="ZfZ-oP-14I" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-70" id="Kdb-60-h10"/>
                             <constraint firstItem="ZfZ-oP-14I" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Xyq-RS-7Sz"/>
+                            <constraint firstItem="R8G-u3-Glj" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="40" id="asq-kw-9pM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,4 +45,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="couvert.png" width="297" height="179"/>
+    </resources>
 </document>

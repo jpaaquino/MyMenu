@@ -26,6 +26,7 @@
 		3FC5FCC71CB6FC8F00EE1986 /* breakfastBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FC5FCC61CB6FC8F00EE1986 /* breakfastBackground.jpg */; };
 		3FC5FCC91CB70EDF00EE1986 /* greenbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC5FCC81CB70EDF00EE1986 /* greenbutton.png */; };
 		3FC5FCCB1CB70EFE00EE1986 /* yellow_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC5FCCA1CB70EFE00EE1986 /* yellow_button.png */; };
+		3FC5FCCD1CB7337900EE1986 /* couvert.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FC5FCCC1CB7337900EE1986 /* couvert.png */; };
 		3FD6DE381CB06E47001F7CFC /* lighthouseLocation.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */; };
 		3FEA41B81CB5C71400A972DA /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FEA41B71CB5C71400A972DA /* UIView+FormScroll.m */; };
 		3FF06F991CB31A6D0088F8B1 /* rateOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FF06F971CB31A6D0088F8B1 /* rateOff.png */; };
@@ -71,6 +72,7 @@
 		3FC5FCC61CB6FC8F00EE1986 /* breakfastBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = breakfastBackground.jpg; path = ../../../breakfastBackground.jpg; sourceTree = "<group>"; };
 		3FC5FCC81CB70EDF00EE1986 /* greenbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = greenbutton.png; path = ../../../greenbutton.png; sourceTree = "<group>"; };
 		3FC5FCCA1CB70EFE00EE1986 /* yellow_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = yellow_button.png; path = ../../../yellow_button.png; sourceTree = "<group>"; };
+		3FC5FCCC1CB7337900EE1986 /* couvert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = couvert.png; path = ../../../couvert.png; sourceTree = "<group>"; };
 		3FD6DE371CB06E47001F7CFC /* lighthouseLocation.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = lighthouseLocation.gpx; path = ../../../lighthouseLocation.gpx; sourceTree = "<group>"; };
 		3FEA41B61CB5C71400A972DA /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
 		3FEA41B71CB5C71400A972DA /* UIView+FormScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormScroll.m"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		3F4A17101CAF213700B023C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3FC5FCCC1CB7337900EE1986 /* couvert.png */,
 				3FC5FCCA1CB70EFE00EE1986 /* yellow_button.png */,
 				3FC5FCC81CB70EDF00EE1986 /* greenbutton.png */,
 				3FC5FCC61CB6FC8F00EE1986 /* breakfastBackground.jpg */,
@@ -262,6 +265,7 @@
 				3FF6E5AE1CB2E8B200D13EBB /* bullseye.png in Resources */,
 				3FF75FD91CB3247A00414CE5 /* staroff.png in Resources */,
 				3FC5FCCB1CB70EFE00EE1986 /* yellow_button.png in Resources */,
+				3FC5FCCD1CB7337900EE1986 /* couvert.png in Resources */,
 				3FF75FD71CB3219900414CE5 /* shinystar.png in Resources */,
 				3FC5FCC91CB70EDF00EE1986 /* greenbutton.png in Resources */,
 				3F4A171B1CAF213700B023C7 /* Main.storyboard in Resources */,
