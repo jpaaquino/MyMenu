@@ -23,12 +23,12 @@
 - (NSString *)title {
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     
-    [formatter setMaximumFractionDigits:2];
+    [formatter setMaximumFractionDigits:1];
     
-    [formatter setMinimumFractionDigits:0];
+    [formatter setMinimumFractionDigits:1];
     NSString *result = [formatter stringFromNumber:self.avgStars];
     
-    return [NSString stringWithFormat:@"%@ - %@ ⭐️", self.name,result];
+    return [NSString stringWithFormat:@"%@   %@ ⭐️", self.name,result];
 }
 
 

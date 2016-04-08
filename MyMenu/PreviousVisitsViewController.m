@@ -139,9 +139,9 @@
     // Customize the cell
     
     if(indexPath.row % 2 == 0){
-        visitcell.backgroundColor = [UIColor colorWithRed:0.990 green:0.990 blue:0.990 alpha:1.0];
+        visitcell.backgroundColor = [UIColor colorWithRed:0.996 green:0.996 blue:0.996 alpha:1.0];
     }else{
-        visitcell.backgroundColor = [UIColor colorWithRed:0.871 green:0.879 blue:0.856 alpha:1.0];
+        visitcell.backgroundColor = [UIColor colorWithRed:0.961 green:0.961 blue:0.961 alpha:1.0];
     }
     visitcell.dateLabel = [visitcell viewWithTag:1];
     visitcell.descriptionLabel = [visitcell viewWithTag:2];
