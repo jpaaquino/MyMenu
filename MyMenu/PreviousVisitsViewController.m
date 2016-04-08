@@ -23,6 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.estimatedRowHeight = 73;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+
+    
     
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewVisit)];
         self.navigationItem.rightBarButtonItem = addButton;
@@ -60,7 +64,7 @@
     [super viewWillAppear:animated];
     [self fetchVisits];
     [self.tableView reloadData];
-
+  
     
 }
 - (void)didReceiveMemoryWarning {
@@ -178,8 +182,10 @@
        }
     
     //visitcell.starsLabel.text = [NSString stringWithFormat:@"%@ ⭐️",visit.stars ];
+    //[visitcell updateConstraintsIfNeeded];
 
-
+//    [visitcell.contentView setNeedsLayout];
+//    [visitcell.contentView layoutIfNeeded];
 
     
       return visitcell;

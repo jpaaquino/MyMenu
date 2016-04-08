@@ -25,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.dismissKbButton setHidden:YES];
+
     self.restaurantTextField.backgroundColor = [UIColor whiteColor];
 
     [self registerForKeyboardNotifications];
