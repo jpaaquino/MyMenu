@@ -24,6 +24,8 @@
     // Do any additional setup after loading the view.
     [self addStarsView];
     self.restaurantTextField.text = [NSString stringWithFormat:@"%@",self.currentRestaurant.name];
+    self.descriptionTextView.layer.borderColor = [UIColor blackColor].CGColor;
+    self.descriptionTextView.layer.borderWidth = 1.0;
 }
 -(void)addStarsView{
     self.ratingView.delegate = self;
@@ -36,7 +38,7 @@
 }
 - (void)ratingView:(BTRatingView *)ratingView ratingDidChange:(float)rating
 {
-    NSLog(@"RatingDidChange: %f",rating);
+   // NSLog(@"RatingDidChange: %f",rating);
 }
 
 - (void)didReceiveMemoryWarning {

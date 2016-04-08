@@ -28,7 +28,7 @@
     [formatter setMinimumFractionDigits:1];
     NSString *result = [formatter stringFromNumber:self.avgStars];
     
-    return [NSString stringWithFormat:@"%@   %@ ⭐️", self.name,result];
+    return [NSString stringWithFormat:@"%@  %@ ⭐️", self.name,result];
 }
 
 

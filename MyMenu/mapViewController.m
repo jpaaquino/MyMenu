@@ -100,11 +100,10 @@
 
     self.restaurantArray = [del.managedObjectContext executeFetchRequest:req error:nil];
     
-///////////
     
     for (Restaurants *restaurant in self.restaurantArray) {
         int nVisits = (int)restaurant.toVisits.count;
-        NSLog(@"%@ %i",restaurant.name, nVisits);
+        //NSLog(@"%@ %i",restaurant.name, nVisits);
         float totalStars = 0;
         for (Visits *aVisit in restaurant.toVisits){
             totalStars = totalStars + aVisit.stars.floatValue;
@@ -117,11 +116,8 @@
         {
             NSLog(@"Error ! %@", error);
         }
-        
-        
     }
 
-/////////
     //NSLog(@"%lu",(unsigned long)self.restaurantArray.count);
     [self.mapView addAnnotations:self.restaurantArray];
 }
@@ -233,37 +229,6 @@
 
 }
 
-/*
-- (void)addCurrentLocationAnnotation {
-    //MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    NSManagedObjectContext* context = ((AppDelegate*)[[UIApplication sharedApplication] delegate]). managedObjectContext;
-
-   // Restaurants *newRestaurant = [[Restaurants alloc]init];
-    
-    Restaurants *newRestaurant = [NSEntityDescription insertNewObjectForEntityForName:@"Restaurants" inManagedObjectContext:context];
-
-
-   // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(43.644645043,-79.3949990);
-
-   // CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(self.locationManager.location.coordinate.latitude, self.locationManager.location.coordinate.longitude);
-    CLLocationCoordinate2D coordinate = self.mapView.centerCoordinate;
-
-    newRestaurant.latitude = [NSNumber numberWithDouble:coordinate.latitude];
-    newRestaurant.longitude = [NSNumber numberWithDouble:coordinate.longitude];
-
-    if(newRestaurant.name == nil){
-      newRestaurant.name = @"Click to add restaurant";
-    }
-       [self.mapView addAnnotation:newRestaurant];
-    
-    NSError *error = nil;
-    if (![context save:&error]) {
-        NSLog(@"Save Failed! %@ %@", error, [error localizedDescription]);
-    }
-
-
-   }
- */
 
 - (void)addCurrentLocationAnnotation {
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
@@ -305,7 +270,6 @@
 }
 - (void)createNewEntry:(Restaurants *)restaurant{
     //[self.restaurantArray addObject:restaurant]; //add the restaurant object we are receiving to the array
-    //NSLog(@"Restaurants array:%lu entries",(unsigned long)self.restaurantArray.count);//logs num
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {

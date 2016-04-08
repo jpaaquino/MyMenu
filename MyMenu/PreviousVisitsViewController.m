@@ -139,9 +139,10 @@
     // Customize the cell
     
     if(indexPath.row % 2 == 0){
-        visitcell.backgroundColor = [UIColor colorWithRed:0.996 green:0.996 blue:0.996 alpha:1.0];
-    }else{
         visitcell.backgroundColor = [UIColor colorWithRed:0.961 green:0.961 blue:0.961 alpha:1.0];
+    }else{
+        visitcell.backgroundColor = [UIColor colorWithRed:0.996 green:0.996 blue:0.996 alpha:1.0];
+
     }
     visitcell.dateLabel = [visitcell viewWithTag:1];
     visitcell.descriptionLabel = [visitcell viewWithTag:2];
@@ -149,16 +150,16 @@
     
     NSDateFormatter *format = [[NSDateFormatter alloc] init];
 
-    NSDate *date = [NSDate date];
     //[format setDateFormat:@"MMM dd, yyyy"];
     [format setDateFormat:@"dd-MMM-yyyy"];
-    NSString *dateString = [format stringFromDate:date];
+    NSString *dateString = [format stringFromDate:visit.date];
     
     visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",dateString];
 
     //visitcell.dateLabel.text = [NSString stringWithFormat:@"%@",visit.date];
 
      visitcell.descriptionLabel.text = visit.theDescription;
+    
     switch(visit.stars.intValue) {
         case 1:
             visitcell.starsLabel.text = @"⭐️";
