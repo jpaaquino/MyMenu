@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2301B21CB9C62C00B33446 /* ToDo.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 3F2301B11CB9C62C00B33446 /* ToDo.rtf */; };
 		3F2BBA211CB55ECE00DC9549 /* AddVisitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F2BBA201CB55ECE00DC9549 /* AddVisitViewController.m */; };
 		3F44A6F91CB429BB00E525F1 /* Restaurants+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F44A6F21CB429BB00E525F1 /* Restaurants+CoreDataProperties.m */; };
 		3F44A6FA1CB429BB00E525F1 /* Restaurants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F44A6F41CB429BB00E525F1 /* Restaurants.m */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		12151A9AA18907DE74178F05 /* libPods-MyMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED6E1E7E8C932E139E70F37 /* Pods-MyMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyMenu/Pods-MyMenu.release.xcconfig"; sourceTree = "<group>"; };
+		3F2301B11CB9C62C00B33446 /* ToDo.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ToDo.rtf; sourceTree = SOURCE_ROOT; };
 		3F2BBA1F1CB55ECE00DC9549 /* AddVisitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddVisitViewController.h; sourceTree = "<group>"; };
 		3F2BBA201CB55ECE00DC9549 /* AddVisitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddVisitViewController.m; sourceTree = "<group>"; };
 		3F44A6F11CB429BB00E525F1 /* Restaurants+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Restaurants+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		3F4A17101CAF213700B023C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3F2301B11CB9C62C00B33446 /* ToDo.rtf */,
 				3FC5FCCC1CB7337900EE1986 /* couvert.png */,
 				3FC5FCCA1CB70EFE00EE1986 /* yellow_button.png */,
 				3FC5FCC81CB70EDF00EE1986 /* greenbutton.png */,
@@ -257,6 +260,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2301B21CB9C62C00B33446 /* ToDo.rtf in Resources */,
 				3FD6DE381CB06E47001F7CFC /* lighthouseLocation.gpx in Resources */,
 				3F4A17231CAF213700B023C7 /* LaunchScreen.storyboard in Resources */,
 				3F4A17201CAF213700B023C7 /* Assets.xcassets in Resources */,

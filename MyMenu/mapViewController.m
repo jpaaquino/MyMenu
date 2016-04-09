@@ -28,7 +28,6 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.navigationController.toolbarHidden = YES;
 
     if(self.restaurantArray.count == 0){
     self.restaurantArray = @[].mutableCopy;
@@ -57,6 +56,8 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
+    self.navigationController.toolbarHidden = YES;
+
     //NSLog(@"VDA RA:%lu entries",(unsigned long)self.restaurantArray.count);//logs num
     [self addRestaurantsToView];
 

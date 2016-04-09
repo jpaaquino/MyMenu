@@ -26,9 +26,6 @@
     self.tableView.estimatedRowHeight = 73;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 
-    self.navigationController.toolbarHidden = NO;
-    
-
     
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewVisit)];
         self.navigationItem.rightBarButtonItem = addButton;
@@ -91,6 +88,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationController.toolbarHidden = NO;
     [self fetchVisits];
     [self.tableView reloadData];
   
@@ -189,7 +187,7 @@
             break;
 
         default:
-            visitcell.starsLabel.text = @"⭐️⭐️⭐️⭐️⭐️";
+            visitcell.starsLabel.text = @"";
        }
     
     //visitcell.starsLabel.text = [NSString stringWithFormat:@"%@ ⭐️",visit.stars ];
