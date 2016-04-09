@@ -26,7 +26,9 @@
     self.tableView.estimatedRowHeight = 73;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
 
+    self.navigationController.toolbarHidden = NO;
     
+
     
         UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewVisit)];
         self.navigationItem.rightBarButtonItem = addButton;
@@ -56,6 +58,33 @@
         AddVisitViewController *controller = (AddVisitViewController *)[segue destinationViewController];
         controller.currentRestaurant = self.restaurant;
     }
+    
+}
+-(void)callAlertController{
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Are you sure you want to delete this restaurant?"
+                                          message:@"The entire restaurant will be deleted from the app, not just one visit!"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+    UIAlertAction *cancelAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"NO", @"Cancel action")
+                                   style:UIAlertActionStyleCancel
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       NSLog(@"Cancel action");
+                                   }];
+    
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"YES", @"OK action")
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action)
+                               {
+                                   [self deleteRestaurant];
+                               }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
     
 }
 
@@ -92,25 +121,6 @@
 
 
 }
-//-(NSDate *)dateWithOutTime:(NSDate *)datDate {
-//    if(datDate == nil ) {
-//        datDate = [NSDate date];
-//    }
-//    NSDateFormatter
-//    NSDateComponents* comps = [[NSCalendar currentCalendar] components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:datDate];
-//    return [[NSCalendar currentCalendar] dateFromComponents:comps];
-//}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -241,5 +251,24 @@
     }
 }
 
+- (IBAction)deleteRestaurantButton:(id)sender {
+    [self callAlertController];
+    
+}
+-(void)deleteRestaurant{
+    AppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    [context deleteObject:self.restaurant];
+    NSError *error = nil;//save
+    if (![context save:&error]) {
+        NSLog(@"Save Failed! %@ %@", error, [error localizedDescription]);
+    }
+    
+    
+    [self.navigationController popViewControllerAnimated:YES];
+
+}
 @end
 

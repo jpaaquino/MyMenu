@@ -19,6 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.toolbarHidden = YES;
+
+    self.datePicker.maximumDate = [NSDate date];
+
     [self.dismissKbButton setHidden:YES];
     [self registerForKeyboardNotifications];
     // Do any additional setup after loading the view.

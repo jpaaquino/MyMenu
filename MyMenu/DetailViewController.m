@@ -26,7 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.dismissKbButton setHidden:YES];
- 
+    self.navigationController.toolbarHidden = YES;
+    
+    self.theDatePicker.maximumDate = [NSDate date];
+
     self.descriptionTextView.layer.borderColor = [UIColor blackColor].CGColor;
     self.descriptionTextView.layer.borderWidth = 1.0;
    

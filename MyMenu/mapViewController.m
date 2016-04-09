@@ -28,7 +28,8 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-    
+    self.navigationController.toolbarHidden = YES;
+
     if(self.restaurantArray.count == 0){
     self.restaurantArray = @[].mutableCopy;
        // self.restaurantArray = [[NSMutableArray alloc]init];

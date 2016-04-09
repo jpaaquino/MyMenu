@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Maf-PM-SxA">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -123,6 +123,15 @@
                             <constraint firstItem="Maf-PM-SxA" firstAttribute="leading" secondItem="hRM-lM-gDS" secondAttribute="leading" id="pWY-oL-yUU"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Delete Restaurant" id="Zof-kq-wxf">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deleteRestaurantButton:" destination="Avk-1g-JE6" id="fY6-er-Kcg"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="Maf-PM-SxA" id="4O8-uK-RG2"/>
@@ -182,7 +191,7 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
                                 <connections>
                                     <action selector="HideKeyboard:" destination="Eu3-1Q-Hfi" eventType="editingDidEndOnExit" id="B6H-JM-kah"/>
                                 </connections>
@@ -260,17 +269,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYo-jl-c1a">
-                                <rect key="frame" x="40" y="481" width="240" height="54"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
-                                <state key="normal" title="SAVE">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveAction:" destination="7NA-K1-h3v" eventType="touchUpInside" id="4g8-50-Qmf"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l3S-Oi-hdq" customClass="BTRatingView">
                                 <rect key="frame" x="20" y="122" width="280" height="64"/>
                             </view>
@@ -298,13 +296,24 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cba-Rw-DcH">
-                                <rect key="frame" x="287" y="492" width="36" height="32"/>
+                                <rect key="frame" x="287" y="479" width="36" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="36" id="eXN-iY-HJD"/>
                                 </constraints>
                                 <state key="normal" title="⬇️"/>
                                 <connections>
                                     <action selector="dismissKb:" destination="7NA-K1-h3v" eventType="touchUpInside" id="qLO-Tl-m9A"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYo-jl-c1a">
+                                <rect key="frame" x="40" y="468" width="240" height="54"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                <state key="normal" title="SAVE">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveAction:" destination="7NA-K1-h3v" eventType="touchUpInside" id="4g8-50-Qmf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -329,6 +338,7 @@
                             <constraint firstItem="cba-Rw-DcH" firstAttribute="leading" secondItem="RYo-jl-c1a" secondAttribute="trailing" constant="7" id="Yg8-Vl-XGf"/>
                             <constraint firstAttribute="trailing" secondItem="Afu-nI-tZ6" secondAttribute="trailing" constant="20" id="Zbf-Ak-m4s"/>
                             <constraint firstAttribute="trailing" secondItem="x0F-Ij-7Ib" secondAttribute="trailing" constant="20" id="aXf-al-tzk"/>
+                            <constraint firstItem="5vr-HI-rVJ" firstAttribute="top" secondItem="RYo-jl-c1a" secondAttribute="bottom" constant="2" id="agc-aj-UeF"/>
                             <constraint firstItem="x0F-Ij-7Ib" firstAttribute="height" secondItem="qOZ-7Q-c8l" secondAttribute="height" multiplier="0.05725" id="dTC-rh-C0r"/>
                             <constraint firstItem="l3S-Oi-hdq" firstAttribute="height" secondItem="qOZ-7Q-c8l" secondAttribute="height" multiplier="0.1126" id="ezE-0h-XGG"/>
                             <constraint firstItem="cba-Rw-DcH" firstAttribute="centerY" secondItem="RYo-jl-c1a" secondAttribute="centerY" id="fCO-wb-j0f"/>
@@ -338,6 +348,11 @@
                             <constraint firstItem="syZ-DY-9we" firstAttribute="top" secondItem="ZjM-gb-155" secondAttribute="bottom" constant="8" id="r8M-fD-e6i"/>
                             <constraint firstAttribute="trailing" secondItem="l3S-Oi-hdq" secondAttribute="trailing" constant="20" id="szi-BB-3nt"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HDG-lr-WcE"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>

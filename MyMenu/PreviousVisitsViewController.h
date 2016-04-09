@@ -20,5 +20,6 @@
 
 @property (nonatomic, retain) Restaurants *restaurant;
 
+- (IBAction)deleteRestaurantButton:(id)sender;
 
 @end
